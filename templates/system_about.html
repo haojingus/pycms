@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% include inc_header.html %}
+</head>
+<body id="app">
+    <div id="wrapper">
+		{% include inc_nav.html %}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">关于我们</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+					{{version}}<hr>
+					App Author:HAO Jing <br>
+					Plugin Author:HAO Jing<br>
+					...
+					</div>
+		        </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{% include inc_footer.html%}
+
+
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="/static/assets/js/jquery-1.10.2.js""></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/static/assets/js/bootstrap.js""></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/static/assets/js/jquery.metisMenu.js""></script>
+	<script src="/static/assets/js/custom.js"></script>
+
+</body>
+</html>

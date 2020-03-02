@@ -1,0 +1,6 @@
+<div class="form-group" id="group_{$field_id}">
+	<label>{$field_name}</label>
+	<div class="checkbox"  v-for="item in dev_data.sp{$field_id}_developer_data">
+		<label><input type="checkbox" v-bind:value="item.value" v-model="user_data.sp{$field_id}_user_data">{{ item.name }}</label>
+	</div>
+</div>

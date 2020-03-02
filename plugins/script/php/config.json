@@ -1,0 +1,1 @@
+{"run":"php {$root}/plugins/script/php/cmsapp.php %1","extname":"php"}

@@ -1,0 +1,773 @@
+continue-1 {'errmsg': 'ready', 'tag': 'input', 'tid': 1, 'did': 0, 'code': 201, 'progress': 0, 'user': 'test', 'pid': 23, 'smid': 'input_23_1_0', 'preview': 'N'}
+continue-2
+{'errmsg': 'ready', 'tag': 'input', 'tid': 1, 'did': 0, 'code': 201, 'progress': 0, 'user': 'test', 'pid': 23, 'smid': 'input_23_1_0', 'preview': 'N'}
+{'23': <pymysql.connections.Connection object at 0x7ffedf070d68>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-1 {'smid': 'input_23_1_0', 'code': 201, 'preview': 'N', 'tid': 1, 'progress': 0, 'pid': 23, 'errmsg': 'ready', 'user': 'test', 'did': 0, 'tag': 'input'}
+continue-2
+{'smid': 'input_23_1_0', 'code': 201, 'preview': 'N', 'tid': 1, 'progress': 0, 'pid': 23, 'errmsg': 'ready', 'user': 'test', 'did': 0, 'tag': 'input'}
+{'23': <pymysql.connections.Connection object at 0x7f6042170da0>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tid': 1, 'tag': 'input', 'code': 201, 'user': 'test', 'pid': 23, 'smid': 'input_23_1_0', 'progress': 0, 'errmsg': 'ready', 'preview': 'N', 'did': 0}
+continue-2
+{'tid': 1, 'tag': 'input', 'code': 201, 'user': 'test', 'pid': 23, 'smid': 'input_23_1_0', 'progress': 0, 'errmsg': 'ready', 'preview': 'N', 'did': 0}
+{'23': <pymysql.connections.Connection object at 0x7fb49db30da0>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'preview': 'N', 'errmsg': 'ready', 'tag': 'input', 'tid': 1, 'progress': 0, 'smid': 'input_23_1_0', 'pid': 23, 'user': 'test', 'code': 201}
+continue-2
+{'did': 0, 'preview': 'N', 'errmsg': 'ready', 'tag': 'input', 'tid': 1, 'progress': 0, 'smid': 'input_23_1_0', 'pid': 23, 'user': 'test', 'code': 201}
+{'23': <pymysql.connections.Connection object at 0x7f967f6b0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'pid': 23, 'tid': 1, 'tag': 'input', 'user': 'test', 'smid': 'input_23_1_0', 'code': 201, 'preview': 'N', 'progress': 0, 'errmsg': 'ready'}
+continue-2
+{'did': 0, 'pid': 23, 'tid': 1, 'tag': 'input', 'user': 'test', 'smid': 'input_23_1_0', 'code': 201, 'preview': 'N', 'progress': 0, 'errmsg': 'ready'}
+{'23': <pymysql.connections.Connection object at 0x7f9325cf0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'pid': 23, 'preview': 'N', 'smid': 'input_23_1_0', 'tag': 'input', 'user': 'test', 'did': 0, 'progress': 0, 'code': 201, 'tid': 1}
+continue-2
+{'errmsg': 'ready', 'pid': 23, 'preview': 'N', 'smid': 'input_23_1_0', 'tag': 'input', 'user': 'test', 'did': 0, 'progress': 0, 'code': 201, 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7f56464b0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'user': 'test', 'pid': 23, 'code': 201, 'preview': 'N', 'tag': 'input', 'progress': 0, 'tid': 1, 'smid': 'input_23_1_0', 'did': 0}
+continue-2
+{'errmsg': 'ready', 'user': 'test', 'pid': 23, 'code': 201, 'preview': 'N', 'tag': 'input', 'progress': 0, 'tid': 1, 'smid': 'input_23_1_0', 'did': 0}
+{'23': <pymysql.connections.Connection object at 0x7ff0fd130d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'did': 0, 'preview': 'N', 'tag': 'input', 'progress': 0, 'tid': 1, 'smid': 'input_23_1_0', 'errmsg': 'ready', 'user': 'test', 'code': 201}
+continue-2
+{'pid': 23, 'did': 0, 'preview': 'N', 'tag': 'input', 'progress': 0, 'tid': 1, 'smid': 'input_23_1_0', 'errmsg': 'ready', 'user': 'test', 'code': 201}
+{'23': <pymysql.connections.Connection object at 0x7f4c2d530d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'code': 201, 'did': 0, 'tag': 'input', 'preview': 'N', 'tid': 1, 'pid': 23, 'user': 'test', 'progress': 0, 'errmsg': 'ready', 'smid': 'input_23_1_0'}
+continue-2
+{'code': 201, 'did': 0, 'tag': 'input', 'preview': 'N', 'tid': 1, 'pid': 23, 'user': 'test', 'progress': 0, 'errmsg': 'ready', 'smid': 'input_23_1_0'}
+{'23': <pymysql.connections.Connection object at 0x7f1ce6b72da0>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'code': 201, 'progress': 0, 'errmsg': 'ready', 'pid': 23, 'user': 'test', 'tag': 'input', 'smid': 'input_23_1_0', 'preview': 'N', 'tid': 1}
+continue-2
+{'did': 0, 'code': 201, 'progress': 0, 'errmsg': 'ready', 'pid': 23, 'user': 'test', 'tag': 'input', 'smid': 'input_23_1_0', 'preview': 'N', 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7ff62a4b2da0>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'preview': 'N', 'errmsg': 'ready', 'tag': 'input', 'pid': 23, 'code': 201, 'user': 'test', 'progress': 0, 'did': 0, 'smid': 'input_23_1_0', 'tid': 1}
+continue-2
+{'preview': 'N', 'errmsg': 'ready', 'tag': 'input', 'pid': 23, 'code': 201, 'user': 'test', 'progress': 0, 'did': 0, 'smid': 'input_23_1_0', 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7faf9d730d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tid': 1, 'smid': 'input_23_1_0', 'tag': 'input', 'code': 201, 'errmsg': 'ready', 'did': 0, 'preview': 'N', 'pid': 23, 'progress': 0, 'user': 'test'}
+continue-2
+{'tid': 1, 'smid': 'input_23_1_0', 'tag': 'input', 'code': 201, 'errmsg': 'ready', 'did': 0, 'preview': 'N', 'pid': 23, 'progress': 0, 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f93554b0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'did': 0, 'tag': 'input', 'progress': 0, 'tid': 1, 'code': 201, 'preview': 'N', 'pid': 23, 'smid': 'input_23_1_0', 'user': 'test'}
+continue-2
+{'errmsg': 'ready', 'did': 0, 'tag': 'input', 'progress': 0, 'tid': 1, 'code': 201, 'preview': 'N', 'pid': 23, 'smid': 'input_23_1_0', 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f70965f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'pid': 23, 'code': 201, 'tag': 'input', 'errmsg': 'ready', 'smid': 'input_23_1_0', 'user': 'test', 'tid': 1, 'preview': 'N', 'did': 0}
+continue-2
+{'progress': 0, 'pid': 23, 'code': 201, 'tag': 'input', 'errmsg': 'ready', 'smid': 'input_23_1_0', 'user': 'test', 'tid': 1, 'preview': 'N', 'did': 0}
+{'23': <pymysql.connections.Connection object at 0x7f289cc70d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'user': 'test', 'progress': 0, 'did': 0, 'errmsg': 'ready', 'smid': 'input_23_1_0', 'tag': 'input', 'tid': 1, 'preview': 'N', 'pid': 23, 'code': 201}
+continue-2
+{'user': 'test', 'progress': 0, 'did': 0, 'errmsg': 'ready', 'smid': 'input_23_1_0', 'tag': 'input', 'tid': 1, 'preview': 'N', 'pid': 23, 'code': 201}
+{'23': <pymysql.connections.Connection object at 0x7f17d8bf0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'smid': 'input_23_1_0', 'tag': 'input', 'pid': 23, 'tid': 1, 'code': 201, 'user': 'test', 'preview': 'N', 'errmsg': 'ready', 'progress': 0}
+continue-2
+{'did': 0, 'smid': 'input_23_1_0', 'tag': 'input', 'pid': 23, 'tid': 1, 'code': 201, 'user': 'test', 'preview': 'N', 'errmsg': 'ready', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7fd163830d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'smid': 'input_23_1_0', 'pid': 23, 'code': 201, 'tag': 'input', 'errmsg': 'ready', 'preview': 'N', 'tid': 1, 'user': 'test', 'did': 0}
+continue-2
+{'progress': 0, 'smid': 'input_23_1_0', 'pid': 23, 'code': 201, 'tag': 'input', 'errmsg': 'ready', 'preview': 'N', 'tid': 1, 'user': 'test', 'did': 0}
+{'23': <pymysql.connections.Connection object at 0x7fde57730d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'preview': 'N', 'smid': 'input_23_1_0', 'pid': 23, 'code': 201, 'progress': 0, 'tid': 1, 'user': 'test', 'tag': 'input', 'errmsg': 'ready'}
+continue-2
+{'did': 0, 'preview': 'N', 'smid': 'input_23_1_0', 'pid': 23, 'code': 201, 'progress': 0, 'tid': 1, 'user': 'test', 'tag': 'input', 'errmsg': 'ready'}
+{'23': <pymysql.connections.Connection object at 0x7f9d13172da0>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'smid': 'input_23_1_0', 'user': 'test', 'errmsg': 'ready', 'code': 201, 'tag': 'input', 'tid': 1, 'did': 0, 'pid': 23, 'progress': 0, 'preview': 'N'}
+continue-2
+{'smid': 'input_23_1_0', 'user': 'test', 'errmsg': 'ready', 'code': 201, 'tag': 'input', 'tid': 1, 'did': 0, 'pid': 23, 'progress': 0, 'preview': 'N'}
+{'23': <pymysql.connections.Connection object at 0x7f382ce30d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'did': 0, 'progress': 0, 'preview': 'N', 'tag': 'input', 'user': 'test', 'tid': 1, 'smid': 'input_23_1_0', 'errmsg': 'ready', 'code': 201}
+continue-2
+{'pid': 23, 'did': 0, 'progress': 0, 'preview': 'N', 'tag': 'input', 'user': 'test', 'tid': 1, 'smid': 'input_23_1_0', 'errmsg': 'ready', 'code': 201}
+{'23': <pymysql.connections.Connection object at 0x7f7b69df0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'pid': 23, 'tag': 'input', 'errmsg': 'ready', 'user': 'test', 'tid': 1, 'did': 0, 'preview': 'N', 'code': 201, 'smid': 'input_23_1_0'}
+continue-2
+{'progress': 0, 'pid': 23, 'tag': 'input', 'errmsg': 'ready', 'user': 'test', 'tid': 1, 'did': 0, 'preview': 'N', 'code': 201, 'smid': 'input_23_1_0'}
+{'23': <pymysql.connections.Connection object at 0x7f6efd3f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'tid': 1, 'user': 'test', 'did': 0, 'progress': 0, 'smid': 'input_23_1_0', 'preview': 'N', 'errmsg': 'ready', 'code': 201, 'tag': 'input'}
+continue-2
+{'pid': 23, 'tid': 1, 'user': 'test', 'did': 0, 'progress': 0, 'smid': 'input_23_1_0', 'preview': 'N', 'errmsg': 'ready', 'code': 201, 'tag': 'input'}
+{'23': <pymysql.connections.Connection object at 0x7f6abdb30d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'user': 'test', 'did': 0, 'tid': 1, 'errmsg': 'ready', 'preview': 'N', 'pid': 23, 'progress': 0, 'code': 201, 'smid': 'input_23_1_0', 'tag': 'input'}
+continue-2
+{'user': 'test', 'did': 0, 'tid': 1, 'errmsg': 'ready', 'preview': 'N', 'pid': 23, 'progress': 0, 'code': 201, 'smid': 'input_23_1_0', 'tag': 'input'}
+{'23': <pymysql.connections.Connection object at 0x7f8c3a630d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'code': 201, 'pid': 23, 'progress': 0, 'smid': 'input_23_1_0', 'tag': 'input', 'preview': 'N', 'tid': 1, 'user': 'test', 'errmsg': 'ready'}
+continue-2
+{'did': 0, 'code': 201, 'pid': 23, 'progress': 0, 'smid': 'input_23_1_0', 'tag': 'input', 'preview': 'N', 'tid': 1, 'user': 'test', 'errmsg': 'ready'}
+{'23': <pymysql.connections.Connection object at 0x7fc42c0f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'tid': 1, 'pid': 23, 'smid': 'input_23_1_0', 'tag': 'input', 'preview': 'N', 'errmsg': 'ready', 'code': 201, 'user': 'test', 'progress': 0}
+continue-2
+{'did': 0, 'tid': 1, 'pid': 23, 'smid': 'input_23_1_0', 'tag': 'input', 'preview': 'N', 'errmsg': 'ready', 'code': 201, 'user': 'test', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7fa4a25f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'preview': 'N', 'code': 201, 'progress': 0, 'user': 'test', 'did': 0, 'errmsg': 'ready', 'smid': 'input_23_1_0', 'tag': 'input', 'tid': 1}
+continue-2
+{'pid': 23, 'preview': 'N', 'code': 201, 'progress': 0, 'user': 'test', 'did': 0, 'errmsg': 'ready', 'smid': 'input_23_1_0', 'tag': 'input', 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7f5d90df0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tid': 1, 'did': 0, 'progress': 0, 'user': 'test', 'errmsg': 'ready', 'pid': 23, 'code': 201, 'preview': 'N', 'tag': 'input', 'smid': 'input_23_1_0'}
+continue-2
+{'tid': 1, 'did': 0, 'progress': 0, 'user': 'test', 'errmsg': 'ready', 'pid': 23, 'code': 201, 'preview': 'N', 'tag': 'input', 'smid': 'input_23_1_0'}
+{'23': <pymysql.connections.Connection object at 0x7f72ebab0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'preview': 'N', 'tag': 'input', 'code': 201, 'tid': 1, 'smid': 'input_23_1_0', 'did': 0, 'user': 'test', 'errmsg': 'ready', 'progress': 0}
+continue-2
+{'pid': 23, 'preview': 'N', 'tag': 'input', 'code': 201, 'tid': 1, 'smid': 'input_23_1_0', 'did': 0, 'user': 'test', 'errmsg': 'ready', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7f757e6b0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tag': 'input', 'errmsg': 'ready', 'progress': 0, 'preview': 'N', 'did': 0, 'code': 201, 'tid': 1, 'smid': 'input_23_1_0', 'pid': 23, 'user': 'test'}
+continue-2
+{'tag': 'input', 'errmsg': 'ready', 'progress': 0, 'preview': 'N', 'did': 0, 'code': 201, 'tid': 1, 'smid': 'input_23_1_0', 'pid': 23, 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f667f570d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'code': 201, 'did': 0, 'preview': 'N', 'errmsg': 'ready', 'user': 'test', 'pid': 23, 'progress': 0, 'tid': 1, 'tag': 'input', 'smid': 'input_23_1_0'}
+continue-2
+{'code': 201, 'did': 0, 'preview': 'N', 'errmsg': 'ready', 'user': 'test', 'pid': 23, 'progress': 0, 'tid': 1, 'tag': 'input', 'smid': 'input_23_1_0'}
+{'23': <pymysql.connections.Connection object at 0x7f3720270d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'preview': 'N', 'tid': 1, 'tag': 'input', 'errmsg': 'ready', 'pid': 23, 'progress': 0, 'user': 'test', 'code': 201, 'did': 0, 'smid': 'input_23_1_0'}
+continue-2
+{'preview': 'N', 'tid': 1, 'tag': 'input', 'errmsg': 'ready', 'pid': 23, 'progress': 0, 'user': 'test', 'code': 201, 'did': 0, 'smid': 'input_23_1_0'}
+{'23': <pymysql.connections.Connection object at 0x7fb02e5f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'smid': 'input_23_1_0', 'preview': 'N', 'tag': 'input', 'pid': 23, 'progress': 0, 'user': 'test', 'code': 201, 'did': 0, 'errmsg': 'ready', 'tid': 1}
+continue-2
+{'smid': 'input_23_1_0', 'preview': 'N', 'tag': 'input', 'pid': 23, 'progress': 0, 'user': 'test', 'code': 201, 'did': 0, 'errmsg': 'ready', 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7f7d27b30d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'code': 201, 'errmsg': 'ready', 'smid': 'input_23_1_0', 'preview': 'N', 'tid': 1, 'tag': 'input', 'did': 0, 'progress': 0, 'pid': 23, 'user': 'test'}
+continue-2
+{'code': 201, 'errmsg': 'ready', 'smid': 'input_23_1_0', 'preview': 'N', 'tid': 1, 'tag': 'input', 'did': 0, 'progress': 0, 'pid': 23, 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7ff6321f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'user': 'test', 'pid': 23, 'tag': 'input', 'preview': 'N', 'tid': 1, 'did': 0, 'code': 201, 'errmsg': 'ready', 'smid': 'input_23_1_0'}
+continue-2
+{'progress': 0, 'user': 'test', 'pid': 23, 'tag': 'input', 'preview': 'N', 'tid': 1, 'did': 0, 'code': 201, 'errmsg': 'ready', 'smid': 'input_23_1_0'}
+{'23': <pymysql.connections.Connection object at 0x7fd8f6ab0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tag': 'input', 'tid': 1, 'smid': 'input_23_1_0', 'preview': 'N', 'pid': 23, 'user': 'test', 'code': 201, 'errmsg': 'ready', 'progress': 0, 'did': 0}
+continue-2
+{'tag': 'input', 'tid': 1, 'smid': 'input_23_1_0', 'preview': 'N', 'pid': 23, 'user': 'test', 'code': 201, 'errmsg': 'ready', 'progress': 0, 'did': 0}
+{'23': <pymysql.connections.Connection object at 0x7fd2b87f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tag': 'input', 'preview': 'N', 'progress': 0, 'did': 0, 'pid': 23, 'smid': 'input_23_1_0', 'code': 201, 'errmsg': 'ready', 'user': 'test', 'tid': 1}
+continue-2
+{'tag': 'input', 'preview': 'N', 'progress': 0, 'did': 0, 'pid': 23, 'smid': 'input_23_1_0', 'code': 201, 'errmsg': 'ready', 'user': 'test', 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7f8364670d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'smid': 'input_23_1_0', 'preview': 'N', 'pid': 23, 'did': 0, 'tag': 'input', 'errmsg': 'ready', 'tid': 1, 'code': 201, 'user': 'test', 'progress': 0}
+continue-2
+{'smid': 'input_23_1_0', 'preview': 'N', 'pid': 23, 'did': 0, 'tag': 'input', 'errmsg': 'ready', 'tid': 1, 'code': 201, 'user': 'test', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7f5eaf270d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'progress': 0, 'pid': 23, 'smid': 'input_23_1_0', 'code': 201, 'user': 'test', 'preview': 'N', 'tid': 1, 'did': 0, 'tag': 'input'}
+continue-2
+{'errmsg': 'ready', 'progress': 0, 'pid': 23, 'smid': 'input_23_1_0', 'code': 201, 'user': 'test', 'preview': 'N', 'tid': 1, 'did': 0, 'tag': 'input'}
+{'23': <pymysql.connections.Connection object at 0x7fe89aeb0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'did': 0, 'tag': 'input', 'smid': 'input_23_1_0', 'user': 'test', 'tid': 1, 'preview': 'N', 'progress': 0, 'code': 201, 'pid': 23}
+continue-2
+{'errmsg': 'ready', 'did': 0, 'tag': 'input', 'smid': 'input_23_1_0', 'user': 'test', 'tid': 1, 'preview': 'N', 'progress': 0, 'code': 201, 'pid': 23}
+{'23': <pymysql.connections.Connection object at 0x7f42ddab0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'smid': 'input_23_1_0', 'tid': 1, 'pid': 23, 'tag': 'input', 'did': 0, 'user': 'test', 'errmsg': 'ready', 'code': 201, 'preview': 'N'}
+continue-2
+{'progress': 0, 'smid': 'input_23_1_0', 'tid': 1, 'pid': 23, 'tag': 'input', 'did': 0, 'user': 'test', 'errmsg': 'ready', 'code': 201, 'preview': 'N'}
+{'23': <pymysql.connections.Connection object at 0x7fe0c5cf0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tag': 'input', 'errmsg': 'ready', 'smid': 'input_23_1_0', 'pid': 23, 'progress': 0, 'code': 201, 'preview': 'N', 'user': 'test', 'did': 0, 'tid': 1}
+continue-2
+{'tag': 'input', 'errmsg': 'ready', 'smid': 'input_23_1_0', 'pid': 23, 'progress': 0, 'code': 201, 'preview': 'N', 'user': 'test', 'did': 0, 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7f0d36930d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'preview': 'N', 'tag': 'input', 'smid': 'input_23_1_0', 'errmsg': 'ready', 'user': 'test', 'progress': 0, 'tid': 1, 'code': 201, 'did': 0, 'pid': 23}
+continue-2
+{'preview': 'N', 'tag': 'input', 'smid': 'input_23_1_0', 'errmsg': 'ready', 'user': 'test', 'progress': 0, 'tid': 1, 'code': 201, 'did': 0, 'pid': 23}
+{'23': <pymysql.connections.Connection object at 0x7ff88acb0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'preview': 'N', 'progress': 0, 'smid': 'input_23_1_0', 'user': 'test', 'did': 0, 'tid': 1, 'pid': 23, 'code': 201, 'tag': 'input'}
+continue-2
+{'errmsg': 'ready', 'preview': 'N', 'progress': 0, 'smid': 'input_23_1_0', 'user': 'test', 'did': 0, 'tid': 1, 'pid': 23, 'code': 201, 'tag': 'input'}
+{'23': <pymysql.connections.Connection object at 0x7f11e8130d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'errmsg': 'ready', 'user': 'test', 'preview': 'N', 'pid': 23, 'code': 201, 'tid': 1, 'progress': 0, 'smid': 'input_23_1_0', 'tag': 'input'}
+continue-2
+{'did': 0, 'errmsg': 'ready', 'user': 'test', 'preview': 'N', 'pid': 23, 'code': 201, 'tid': 1, 'progress': 0, 'smid': 'input_23_1_0', 'tag': 'input'}
+{'23': <pymysql.connections.Connection object at 0x7f0a56830d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'smid': 'input_23_1_0', 'code': 201, 'did': 0, 'progress': 0, 'errmsg': 'ready', 'preview': 'N', 'user': 'test', 'tag': 'input', 'pid': 23, 'tid': 1}
+continue-2
+{'smid': 'input_23_1_0', 'code': 201, 'did': 0, 'progress': 0, 'errmsg': 'ready', 'preview': 'N', 'user': 'test', 'tag': 'input', 'pid': 23, 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7fd531470d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'did': 0, 'progress': 0, 'preview': 'N', 'user': 'test', 'tag': 'input', 'code': 201, 'smid': 'input_23_1_0', 'tid': 1, 'pid': 23}
+continue-2
+{'errmsg': 'ready', 'did': 0, 'progress': 0, 'preview': 'N', 'user': 'test', 'tag': 'input', 'code': 201, 'smid': 'input_23_1_0', 'tid': 1, 'pid': 23}
+{'23': <pymysql.connections.Connection object at 0x7f4616a30d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'preview': 'N', 'user': 'test', 'tid': 1, 'did': 0, 'code': 201, 'tag': 'input', 'pid': 23, 'errmsg': 'ready', 'smid': 'input_23_1_0'}
+continue-2
+{'progress': 0, 'preview': 'N', 'user': 'test', 'tid': 1, 'did': 0, 'code': 201, 'tag': 'input', 'pid': 23, 'errmsg': 'ready', 'smid': 'input_23_1_0'}
+{'23': <pymysql.connections.Connection object at 0x7f86b4c70d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'did': 0, 'pid': 23, 'tag': 'input', 'smid': 'input_23_1_0', 'tid': 1, 'progress': 0, 'preview': 'N', 'user': 'test', 'code': 201}
+continue-2
+{'errmsg': 'ready', 'did': 0, 'pid': 23, 'tag': 'input', 'smid': 'input_23_1_0', 'tid': 1, 'progress': 0, 'preview': 'N', 'user': 'test', 'code': 201}
+{'23': <pymysql.connections.Connection object at 0x7fb1688f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'pid': 23, 'tid': 1, 'progress': 0, 'smid': 'input_23_1_0', 'tag': 'input', 'user': 'test', 'errmsg': 'ready', 'preview': 'N', 'code': 201}
+continue-2
+{'did': 0, 'pid': 23, 'tid': 1, 'progress': 0, 'smid': 'input_23_1_0', 'tag': 'input', 'user': 'test', 'errmsg': 'ready', 'preview': 'N', 'code': 201}
+{'23': <pymysql.connections.Connection object at 0x7f4b833f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'did': 0, 'tag': 'input', 'code': 201, 'smid': 'input_23_1_0', 'tid': 1, 'user': 'test', 'pid': 23, 'errmsg': 'ready', 'preview': 'N'}
+continue-2
+{'progress': 0, 'did': 0, 'tag': 'input', 'code': 201, 'smid': 'input_23_1_0', 'tid': 1, 'user': 'test', 'pid': 23, 'errmsg': 'ready', 'preview': 'N'}
+{'23': <pymysql.connections.Connection object at 0x7f3cdf3f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'preview': 'N', 'smid': 'input_23_1_0', 'pid': 23, 'errmsg': 'ready', 'tag': 'input', 'tid': 1, 'did': 0, 'code': 201, 'user': 'test', 'progress': 0}
+continue-2
+{'preview': 'N', 'smid': 'input_23_1_0', 'pid': 23, 'errmsg': 'ready', 'tag': 'input', 'tid': 1, 'did': 0, 'code': 201, 'user': 'test', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7fc565930d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'pid': 23, 'errmsg': 'ready', 'tag': 'input', 'progress': 0, 'smid': 'input_23_1_0', 'code': 201, 'tid': 1, 'preview': 'N', 'user': 'test'}
+continue-2
+{'did': 0, 'pid': 23, 'errmsg': 'ready', 'tag': 'input', 'progress': 0, 'smid': 'input_23_1_0', 'code': 201, 'tid': 1, 'preview': 'N', 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f38a23f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'smid': 'input_23_1_0', 'tid': 1, 'tag': 'input', 'preview': 'N', 'progress': 0, 'errmsg': 'ready', 'user': 'test', 'pid': 23, 'code': 201, 'did': 0}
+continue-2
+{'smid': 'input_23_1_0', 'tid': 1, 'tag': 'input', 'preview': 'N', 'progress': 0, 'errmsg': 'ready', 'user': 'test', 'pid': 23, 'code': 201, 'did': 0}
+{'23': <pymysql.connections.Connection object at 0x7f27b98f0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'errmsg': 'ready', 'tid': 1, 'code': 201, 'tag': 'input', 'user': 'test', 'did': 0, 'preview': 'N', 'smid': 'input_23_1_0', 'progress': 0}
+continue-2
+{'pid': 23, 'errmsg': 'ready', 'tid': 1, 'code': 201, 'tag': 'input', 'user': 'test', 'did': 0, 'preview': 'N', 'smid': 'input_23_1_0', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7f6208070d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tid': 1, 'pid': 23, 'preview': 'N', 'did': 0, 'errmsg': 'ready', 'tag': 'input', 'code': 201, 'smid': 'input_23_1_0', 'user': 'test', 'progress': 0}
+continue-2
+{'tid': 1, 'pid': 23, 'preview': 'N', 'did': 0, 'errmsg': 'ready', 'tag': 'input', 'code': 201, 'smid': 'input_23_1_0', 'user': 'test', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7f3cfa8b0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'smid': 'input_23_1_0', 'preview': 'N', 'tid': 1, 'pid': 23, 'progress': 0, 'did': 0, 'code': 201, 'tag': 'input', 'user': 'test'}
+continue-2
+{'errmsg': 'ready', 'smid': 'input_23_1_0', 'preview': 'N', 'tid': 1, 'pid': 23, 'progress': 0, 'did': 0, 'code': 201, 'tag': 'input', 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f6c1f870d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'smid': 'input_23_1_0', 'code': 201, 'errmsg': 'ready', 'tid': 1, 'did': 0, 'user': 'test', 'preview': 'N', 'tag': 'input', 'progress': 0, 'pid': 23}
+continue-2
+{'smid': 'input_23_1_0', 'code': 201, 'errmsg': 'ready', 'tid': 1, 'did': 0, 'user': 'test', 'preview': 'N', 'tag': 'input', 'progress': 0, 'pid': 23}
+{'23': <pymysql.connections.Connection object at 0x7fdd26a30d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 0, 'tag': 'input', 'smid': 'input_23_1_0', 'errmsg': 'ready', 'code': 201, 'progress': 0, 'tid': 1, 'user': 'test', 'preview': 'N', 'pid': 23}
+continue-2
+{'did': 0, 'tag': 'input', 'smid': 'input_23_1_0', 'errmsg': 'ready', 'code': 201, 'progress': 0, 'tid': 1, 'user': 'test', 'preview': 'N', 'pid': 23}
+{'23': <pymysql.connections.Connection object at 0x7f764dcf0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'code': 201, 'progress': 0, 'smid': 'input_23_1_0', 'errmsg': 'ready', 'tid': 1, 'user': 'test', 'preview': 'N', 'tag': 'input', 'did': 0}
+continue-2
+{'pid': 23, 'code': 201, 'progress': 0, 'smid': 'input_23_1_0', 'errmsg': 'ready', 'tid': 1, 'user': 'test', 'preview': 'N', 'tag': 'input', 'did': 0}
+{'23': <pymysql.connections.Connection object at 0x7f82f1970d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'user': 'test', 'preview': 'N', 'errmsg': 'ready', 'smid': 'input_23_1_0', 'pid': 23, 'did': 0, 'tid': 1, 'tag': 'input', 'code': 201}
+continue-2
+{'progress': 0, 'user': 'test', 'preview': 'N', 'errmsg': 'ready', 'smid': 'input_23_1_0', 'pid': 23, 'did': 0, 'tid': 1, 'tag': 'input', 'code': 201}
+{'23': <pymysql.connections.Connection object at 0x7f76254b0d30>}
+continue-3
+continue-4 select `field_id`,`field_name`,`field_type`,`min_size`,`max_size`,`algorithm`,`default_value` from `cms_template_field` where `template_id`=1 and `enable`=1 order by `display_order` asc input
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]

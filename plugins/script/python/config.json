@@ -1,0 +1,1 @@
+{"run":"python {$root}/plugins/script/python/cmsapp.py %1","extname":"py"}

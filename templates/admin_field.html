@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	{% include inc_header.html %}
+	<!-- CodeMirror -->
+	<link rel="stylesheet" href="{{ static_url("js/codemirror/lib/codemirror.css") }}">
+	<script src="{{ static_url("js/codemirror/lib/codemirror.js") }}"></script>
+	<script src="{{ static_url("js/codemirror/addon/mode/loadmode.js") }}"></script>
+	<script src="{{ static_url("js/codemirror/mode/meta.js") }}"></script>
+	<style type="text/css">
+		.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+	</style>
+</head>
+<body>
+    <div id="wrapper">
+		{% include inc_nav.html %}
+<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">模板域编辑</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           模板域
+                        </div>
+                        <div class="panel-body center-block">
+                            <form role="form" id="field_form" target="_blank" method="POST">
+                                        <div class="form-group">
+                                            <label>模板域名称</label>
+                                            <input id="name" class="form-control" type="text" value="{{data['field_name']}}" style="width:30%;">
+										</div>
+										<div class="from-group">
+											<label>模板域类型</label>
+											<select class="form-control" name="field_type" id="field_type" style="width:20%;">
+											{% for row in types %}
+												 <option value="{{row['field_type']}}" {% if row['selected'] %} selected {% end %}>{{row['cname']}}</option>
+											{% end %}
+											</select>
+											<span id="inputError2Status" class="sr-only">(error)</span>
+										</div>
+										<hr>
+                                        <div class="form-group">
+                                            <label>校验规则</label>
+                                            <input id="rule" class="form-control" type="text" style="width:20%;" value="{{data['rule']}}">
+										</div>
+                                        <div class="form-group">
+                                            <label>最小长度</label>
+                                            <input id="minsize" class="form-control" type="text" style="width:10%;" value="{{data['min_size']}}">
+										</div>
+                                        <div class="form-group">
+                                            <label>最大长度</label>
+                                            <input id="maxsize" class="form-control" type="text" style="width:10%;" value="{{data['max_size']}}">
+										</div>
+										<div class="form-group">
+											<label>绑定到全文引擎字段</label>
+											<select class="form-control" name="fl_field" id="fl_field" style="width:30%;">
+											<option value="">不绑定</option>
+											{% for row in fl_fields %}
+											<option value="{{row['fl_name']}}" {% if row['selected'] %} selected {% end %}>{{row['fl_name']}}</option>
+											{% end %}
+											</select>
+										</div>
+                                        <div class="form-group">
+                                            <label>显示顺序</label>
+                                            <input id="order" class="form-control" type="text" style="width:10%;" value="{{data['display_order']}}">
+										</div>
+                                        <div class="form-group">
+                                            <label>算法</label>
+                                            <textarea id="code" name="code" class="form-control" rows="10">{{data['algorithm']}}</textarea>
+										</div>
+                                        <div class="form-group">
+                                            <label>默认值(spx_submit_data，该属性暂未启用，输入无效！！！)</label>
+                                            <textarea id="value" class="form-control" rows="10">{{data['default_value']}}</textarea>
+										</div>
+                                        <div class="form-group">
+											<div class="checkbox">
+                                            <label><input id="enable" type="checkbox" value="1" {% if data['enable']==1 %}checked{%end%}>是否启用</label>
+											<br>
+											<label><input id="isshow" type="checkbox" value="1" {% if data['is_show']==1 %}checked{%end%}>是否显示</label>
+
+											</div>
+                                        </div>
+										<hr>
+										<div class="form-group">
+											<label>script域调试数据(模拟用户录入数据)</label>
+											<textarea id='debug_data' name='debug_data' class="form-control" rows="3"></textarea>
+										</div>
+	                                  	<input type="hidden" id="action" name="action" value="{{action}}">
+										<input type="hidden" id="project_id" name="project_id" value="{{project_id}}">
+										<input type="hidden" id="template_id" name="template_id" value="{{template_id}}">
+										<input type="hidden" id="field_id" name="field_id" value="{{field_id}}">
+
+                                        <button id="save" type="button" class="btn btn-info">提交</button>
+										<button id="debug" type="button" class="btn btn-info">调试</button>
+                                    </form>
+                            </div>
+                        </div>
+                            </div>
+       </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{% include inc_footer.html%}
+
+
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+	<script src="{{ static_url("assets/js/custom.js") }}"></script>
+
+
+<script>
+//CodeMirror controller
+//******************************
+CodeMirror.modeURL = "/static/js/codemirror/mode/%N/%N.js";
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  lineNumbers: true
+});
+function change() {
+  var val = "php", m, mode, spec;
+  if (m = /.+\.([^.]+)$/.exec(val)) {
+    var info = CodeMirror.findModeByExtension(m[1]);
+    if (info) {
+      mode = info.mode;
+      spec = info.mime;
+    }
+  } else if (/\//.test(val)) {
+    var info = CodeMirror.findModeByMIME(val);
+    if (info) {
+      mode = info.mode;
+      spec = val;
+    }
+  } else {
+    mode = spec = val;
+  }
+  if (mode) {
+    editor.setOption("mode", spec);
+    CodeMirror.autoLoadMode(editor, mode);
+    //document.getElementById("modeinfo").textContent = spec;
+  } else {
+    alert("Could not find a mode corresponding to " + val);
+  }
+}
+
+change();
+
+//debug
+$("button#debug").click(function(){
+	editor.save();
+	$("#field_form").prop('action','/system/algorithm');
+	$("#field_form").submit();
+});
+
+//form deal
+//*****************
+$("button#save").click(function(){
+	editor.save();
+	var cms_pid = $("input#project_id").val();
+	var cms_tid = $("input#template_id").val();
+	var cms_fid = $("input#field_id").val();
+	var cms_name = $.trim($("input#name").val());
+	
+	var cms_type = $("select#field_type").val();
+	var cms_flfield = $("select#fl_field").val();
+	var cms_rule = $.trim($("input#rule").val());
+	var cms_minsize = $.trim($("input#minsize").val());
+	var cms_maxsize = $.trim($("input#maxsize").val());
+	var cms_code = $.trim($("textarea#code").val());
+	var cms_value = $.trim($("input#value").val());
+	var cms_enable = $("input#enable").prop('checked')?1:0;
+	var cms_isshow = $("input#isshow").prop('checked')?1:0;
+	var cms_order = $.trim($("input#order").val());
+	var action = "/admin/field?action="+$("input#action").val();
+	
+	if (cms_fid.length==0 ||$("input#action")=='update'){
+		alert('fid empty');
+		return;
+	}
+
+	if (cms_name.length==0){
+		alert('名称不能为空');
+		return;
+	}
+
+	var chkNum = new RegExp("^[0-9]*$");
+	if(!chkNum.test(cms_minsize)||!chkNum.test(cms_maxsize)||!chkNum.test(cms_order)){
+		alert("长度单位和顺序必须是数字");
+		return;
+	}
+
+
+	$("button#save").prop("disabled",true);
+    let data = {
+        pid: cms_pid,
+        tid: cms_tid,
+        fid: cms_fid,
+        name: cms_name,
+        field_type: cms_type,
+        rule: cms_rule,
+        minsize: cms_minsize,
+        maxsize: cms_maxsize,
+        algorithm: cms_code,
+        default_value: cms_value,
+        enable: cms_enable,
+        isshow: cms_isshow,
+        fl_field: cms_flfield,
+        order: cms_order
+    };
+    console.log(data);
+
+	$.post(action,data,function(result){
+		var obj = JSON.parse(result);
+		if(obj.code===0){
+			alert('添加成功！');
+			$(location).prop('href', '/admin/field?action=list&pid={{project_id}}&tid={{template_id}}');
+			$("input#action").val('update');
+			$("input#field_id").val(obj.fid);
+		}
+		else{
+			$("button#save").prop("disabled",false);
+			alert('添加失败，错误原因：'+obj.errmsg);
+		}
+	});
+});
+</script>
+</body>
+</html>

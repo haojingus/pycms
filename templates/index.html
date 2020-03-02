@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% include inc_header.html %}
+</head>
+<body>
+    <div id="wrapper">
+		{% include inc_nav.html %}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+			<!--
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">仪表盘</h1>
+                        <h1 class="page-subhead-line">php是世界上最好的语言，但cms不是php开发的. </h1>
+
+                    </div>
+                </div>
+			-->
+                <div class="row">
+
+                    <div class="col-md-8">
+					<!--
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">
+                                <h4 class="list-group-item-heading">内容发布系统介绍</h4>
+                                <p class="list-group-item-text" style="line-height: 30px;">
+                                    该cms为独立web server，核心程序不依赖三方服务组件.
+        体系结构为Sina CMS架构，增加了自定义模板域和多模板支持的功能.
+        自定义模板域通过js完成组件构建，可以使用包括php、python、c++、node.js完成各类二次开发.
+                                </p>
+                            </a>
+                        </div>
+						
+                        <br />
+						-->
+                        <!-- 16:9 aspect ratio -->
+<!--这里要填充-->
+<div class="panel panel-back noti-box">
+                            <span class="icon-box bg-color-black">
+                                <i class="fa fa-bicycle"></i>
+                            </span>
+                            <div class="text-box">
+                                <p class="main-text">重要提醒 </p>
+                                <p>二次开发必看，编辑请忽略</p>
+                                <hr />
+                                <p>
+                                    <span class=" color-bottom-txt">
+                              <i class="fa fa-edit"></i>渲染进程回收问题已经解决了，默认回收周期是5秒，请确保一个算法在5秒内执行完成，算法debug请使用cmstest.66rpg.com<br>
+							
+							  <i class="fa fa-edit"></i>动态模板正在开发中，语法类似JSP<br>
+							  <!--
+							  <i class="fa fa-edit"></i>系统回调事件需要补完<br>
+							  <i class="fa fa-edit"></i>ZooKeeper和分布式集群支持<br>
+							  <i class="fa fa-edit"></i>增加资源管理器
+                             -->
+                                    </span>
+
+
+                                </p>
+<hr>
+                            </div>
+                        </div>
+<!--这里要填充-->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <i class="fa fa-bell fa-fw"></i>通告
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="list-group">
+									<a href="#" class="list-group-item">
+                                        <i class="fa fa-twitter fa-fw"></i>Solr完成集成
+                                    <span class="pull-right text-muted small"><em>11/23</em>
+                                    </span>
+                                    </a>
+
+                                    <a href="#" class="list-group-item">
+                                        <i class="fa fa-twitter fa-fw"></i>插件开发系统上线
+                                    <span class="pull-right text-muted small"><em>11/23</em>
+                                    </span>
+                                    </a>
+                                     <a href="#" class="list-group-item">
+                                        <i class="fa fa-twitter fa-fw"></i>模板域debug系统上线
+                                    <span class="pull-right text-muted small"><em>11/23</em>
+                                    </span>
+                                    </a>
+                                  
+                                </div>
+                                <!-- /.list-group -->
+                                <a href="#" class="btn btn-info btn-block">View All Alerts</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+ 
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+
+	{% include inc_footer.html %}
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="/static/assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/static/assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/static/assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+	<script src="/static/assets/js/custom.js"></script>
+
+</body>
+</html>
+

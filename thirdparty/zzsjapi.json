@@ -1,0 +1,1 @@
+[{"name":"get_token","url":"http://www.gamebuilder.com.cn/api/general/user/login","x":"post","params":[{"name":"username"},{"name":"password"}]},{"name":"get_user_info","url":"http://www.gamebuilder.com.cn/api/general/user/get_info","x":"get","params":[{"name":"token"}]}]

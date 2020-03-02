@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>内容发布系统</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="{{ static_url("assets/css/bootstrap.css") }}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="{{ static_url("assets/css/font-awesome.css") }}" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="{{ static_url("assets/css/basic.css") }}" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="{{ static_url("assets/css/custom.css") }}" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="{{ static_url("assets/css/cyrillic-ext.css") }}" rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+{% include inc_nav.html %}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">项目管理</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           站点属性
+                        </div>
+                        <div class="panel-body center-block" style="width:50%;">
+                            <form role="form">
+                                        <div class="form-group">
+                                            <label>站点名称</label>
+                                            <input id="project" name="project" class="form-control" type="text" >
+                                        </div>
+										<div class="form-group">
+                                            <label>域名</label>
+                                            <input id="domain" name="domain" class="form-control" type="text">
+                                        </div>
+										<div class="form-group">
+                                            <label>同步地址</label>
+                                            <input id="rsync" name="rsync" class="form-control" type="text">
+                                        </div>
+										<div class="form-group">
+                                            <label>数据库连接信息</label>
+                                            <input id="mysql" name="mysql" class="form-control" type="text">
+                                        </div>
+										<div class="form-group">
+                                            <label>CDN API</label>
+                                            <input id="cdn" name="cdn" class="form-control" type="text">
+                                        </div>
+							
+                                            <div class="form-group">
+											<div class="checkbox">
+                                            <label><input id="enable" name="enable" type="checkbox" value="1">是否启用</label>
+											</div>
+                                        </div>
+										<input type="hidden" id="project_id" name="project_id" value="{{project_id}}">
+										<input type="hidden" id="action" name="action" value="{{action}}">
+                                        <button type="button" id="submit" name="submit" class="btn btn-info">提交</button>
+
+                                    </form>
+                            </div>
+                        </div>
+                            </div>
+       </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+        <a href="http://www.66rpg.com/" target="_blank" title="六趣网络">&copy; 2017 北京六趣网络科技有限公司</a>
+    </div>
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+	<script src="{{ static_url("assets/js/custom.js") }}"></script>
+
+<script>
+$("button#submit").click(function(){
+
+	var cms_pid = $("input#project_id").val();
+	var cms_project = $.trim($("input#project").val());
+	var cms_domain = $.trim($("input#domain").val());
+	var cms_rsync = $.trim($("input#rsync").val());
+	var cms_mysql = $.trim($("input#mysql").val());
+	var cms_cdn = $.trim($("input#cdn").val());
+	var cms_enable = $.trim($("input#enable").val());
+
+	if (cms_project.length==0){
+		alert('项目名称不能为空');
+		return false;
+	}
+	if (cms_domain.length==0) {
+		alert('域名不能为空');
+		return false;
+	}
+	if (cms_domain.length==0) {
+		alert('rsync地址不能为空');
+		return false;
+	}
+	var chk_rsync = /^rsync\:\/\/\w+\:\w+\@.*$/;
+	if (!chk_rsync.test(cms_rsync)){
+		alert('rsync格式错');
+		return false;
+	}
+	var chk_mysql = /^mysql\:\/\/\w+\:\w+\@.*$/;
+	if (cms_mysql.length!=0&&!chk_mysql.test(cms_mysql)){
+		alert('mysql格式错');
+		return false;
+	}
+	var chk_url = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
+	if (cms_cdn.length!=0&&!chk_url.test(cms_cdn)){
+		alert('CDN API需要是http协议的')
+		return false;
+	}
+	var action = "/admin/project?action="+$("input#action").val()
+
+	$.post(action,{pid:cms_pid,name:cms_project,domain:cms_domain,rsync:cms_rsync,mysql:cms_mysql,cdn:cms_cdn,enable:cms_enable},function(result){
+		var obj = JSON.parse(result);
+		if(obj.code==0){
+			alert('添加成功！');
+			$("input#project_id").val(obj.pid);
+			$("input#action").val("update");
+		} else {
+			alert('添加失败！'+obj.errmsg);
+		}
+	});
+});
+
+</script>
+</body>
+</html>

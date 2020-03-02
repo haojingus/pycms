@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>内容发布系统</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="{{ static_url("assets/css/bootstrap.css") }}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="{{ static_url("assets/css/font-awesome.css") }}" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="{{ static_url("assets/css/basic.css") }}" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="{{ static_url("assets/css/custom.css") }}" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="{{ static_url("assets/css/cyrillic-ext.css") }}" rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">内容发布系统</a>
+            </div>
+
+            <div class="header-right">
+
+              <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
+                <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
+                <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+
+
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">用户管理</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           用户信息
+                        </div>
+                        <div class="panel-body center-block">
+                            <form role="form" method="post" action="/system/user">
+                                        <div class="form-group" style="width:50%;">
+                                            <label>用户id</label>
+                                            <input id="uid" name="uid" class="form-control" type="text" value="{{target['uid']}}">
+                                        </div>
+										<div class="form-group" style="width:50%;">
+                                            <label>用户名</label>
+                                            <input id="username" name="username" class="form-control" type="text" value="{{target['username']}}">
+                                        </div>
+										<div class="form-group" style="width:50%;">
+                                            <label>昵称</label>
+                                            <input id="nickname" name="nickname" class="form-control" type="text" value="{{target['nickname']}}">
+                                        </div>
+										<div class="form-group" style="width:50%;">
+                                            <label>头像</label>
+                                            <input id="avator" name="avator" class="form-control" type="text" value="{{target['avator']}}">
+                                        </div>
+										<div class="form-group">
+                                            <label>权限设定</label>
+											  <table class="table">
+												<thead>
+												  <tr>
+													<th>ID</th>
+													<th>名称</th>
+													<th>可访问</th>
+												  </tr>
+												</thead>
+												<tbody>
+												{%for row in projects %}
+												  <tr class="list-group-item-success">
+													<td>{{row['pid']}}</td>
+													<td>{% if row['pid']!=0 %}<a href="{%if target['uid']!=''%}/system/user?action=updateacl&pid={{row['pid']}}&uid={{target['uid']}}{%else%}#{%end%}">{{row['project']}}</a>{%else%}系统管理{%end%}</td>
+													<td><input name='projects' type="checkbox" value="{{row['pid']}}" {% if row['enable']==1 %}checked{% end %}></td>
+													</tr>
+												  {% end %}
+												</tbody>
+											  </table>
+                                        </div>
+										<input type="hidden" id="action" name="action" value="update">
+                                        <button type="submit" class="btn btn-info">保存</button>
+
+                                    </form>
+                            </div>
+                        </div>
+                            </div>
+       </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{% include inc_footer.html %}
+	<!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+	<script src="{{ static_url("assets/js/custom.js") }}"></script>
+
+</body>
+</html>
+

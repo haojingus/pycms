@@ -1,0 +1,25 @@
+        .closeBtn{
+            position: absolute;
+            right: 18px;
+            top: 13px;
+        }
+        .closeBtn:after{
+            content: "";
+            position: absolute;
+            right: -5px;
+            top: -9px;
+            width: 1px;
+            height: 7px;
+            background-color: #000000b3;
+            transform: rotate(225deg);
+        }
+        .closeBtn:before{
+            content: "";
+            position: absolute;
+            right: -5px;
+            top: -10px;
+            width: 1px;
+            height: 8px;
+            background-color: #000000b3;
+            transform: rotate(134deg);
+        }

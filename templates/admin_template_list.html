@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% include inc_header.html %}
+</head>
+<body>
+    <div id="wrapper">
+		{% include inc_nav.html %}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">模板管理</h1>
+                        <h1 class="page-subhead-line">可执行站点模板的设置和二次开发. </h1>
+                    </div>
+                </div>
+                 <div class="row">
+                   <div class="col-md-12">
+                   <div class="btn-group">
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle">批量操作 <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+											<li><a href="/admin/template?action=add&pid={{project_id}}" id="create">新建模板</a></li>
+											<!--
+											<li><a href="/admin/variable?action=show&pid={{project_id}}" >变量管理</a></li>
+											<li><a href="/admin/component?action=show&pid={{project_id}}">组件管理</a></li>
+											-->
+											<li class="divider"></li>
+											<li><a href="#" id="selectAll">全选</a></li>
+											<li><a href="#" id="cancelAll">取消</a></li>
+											<!--
+                                            <li class="divider"></li>
+											<li><a href="#" data-toggle="modal" data-target="#myModal">启动</a></li>
+                                            <li><a href="#">停用</a></li>
+                                            
+                                            <li class="divider"></li>
+                                            <li><a href="#">删除</a></li>
+											-->
+                                        </ul>
+                                    </div>
+                       <div class="panel panel-primary">
+                           
+      <!-- Default panel contents -->
+      <div class="panel-heading">模板列表</div>
+
+      <!-- Table -->
+      <table class="table" id='template_data'>
+        <thead>
+          <tr>
+            <th width="10%">ID</th>
+            <th>名称</th>
+			<th>摘要</th>
+			<th width="10%">文档数</th>
+			<th width="10%">是否启用</th>
+			<th width="20%">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {%for row in templates %}
+          <tr class="list-group-item-success" id="tr_{{row[0]}}">
+            <td><input type="checkbox" value="{{row[0]}}" />{{row[0]}}</td>
+            <td><a href="/editor/document?action=list&pid={{project_id}}&tid={{row[0]}}">{{row[2]}}</a></td>
+			<td>{{row[4]}}</td>
+			<td>{{row[5]}}</td>
+			<td>{{row[3]}}</td>
+			<td>
+				<a href="/admin/field?action=list&pid={{project_id}}&tid={{row[0]}}" class="btn btn-xs btn-primary">模板域管理</a>
+				<a href="/admin/template?action=update&pid={{project_id}}&tid={{row[0]}}" class="btn btn-xs btn-primary">编辑</a>
+				<button type="button" class="btn btn-xs btn-primary"  onclick="alert('HAO Jing说了，这个功能不安全');">停用</button>
+				<button type="button" tid="{{row[0]}}" class="btn btn-xs btn-primary" onclick="remove_template(this)">删除</button>
+			</td>
+          </tr>
+          {% end %}
+        </tbody>
+      </table>
+	  <input type="hidden" id="pid" name="pid" value="{{project_id}}">
+    </div>
+    
+
+</div>
+                </div>
+              <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{% include inc_footer.html%}
+	<!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ static_url("assets/js/custom.js") }}"></script>
+<script>
+function selectAll(enable){
+	$("[type='checkbox']").attr("checked",enable);
+}
+
+$("#selectAll").click(function(){selectAll(true)});
+$("#cancelAll").click(function(){selectAll(false)});
+
+
+function remove_template(obj){
+
+var msg = '你确定不怕被老板和编辑弄死吗？';
+if (confirm(msg)==true){
+	var tid = $.attr(obj,'tid');
+	var pid = $("input#pid").val();
+	$.post("/admin/template?action=remove",{pid:pid,tid:tid},function(result){
+		recode = JSON.parse(result);
+		if (recode.code==0){
+			$("tr[id='tr_"+tid.toString()+"']").remove();  
+		}
+		else
+		{
+			alert('删除失败');
+		}
+		});
+	}
+
+}
+
+</script>
+
+</body>
+</html>

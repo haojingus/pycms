@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% include inc_header.html%}
+</head>
+<body>
+    <div id="wrapper">
+		{% include inc_nav.html%}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">用户及访问控制管理</h1>
+                        <h1 class="page-subhead-line">可执行CMS权限配置. </h1>
+                    </div>
+                </div>
+                 <div class="row">
+                   <div class="col-md-12">
+                   <div class="btn-group">
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle">批量操作 <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+											<li><a href="/system/user?action=update" id="create">新建用户</a></li>
+											<li class="divider"></li>
+											<li><a href="#" id="selectAll">全选</a></li>
+											<li><a href="#" id="cancelAll">取消</a></li>
+                                            <li class="divider"></li>
+											<li><a href="#" data-toggle="modal" data-target="#myModal">启动</a></li>
+                                            <li><a href="#">停用</a></li>
+                                            
+                                            <li class="divider"></li>
+                                            <li><a href="#">删除</a></li>
+                                        </ul>
+                                    </div>
+                       <div class="panel panel-primary">
+                           
+      <!-- Default panel contents -->
+      <div class="panel-heading">用户列表</div>
+
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th width="10%">UID</th>
+            <th>用户名</th>
+			<th>是否启用</th>
+			<th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {%for row in users %}
+          <tr class="list-group-item-success">
+            <td>{{row['uid']}}</td>
+            <td><a href="/system/user?action=update&uid={{row['uid']}}">{{row['nickname']}}</a></td>
+			<td>{% if row['status']==1 %}已启用{% else %}已停用{% end %}</td>
+			<td>
+				<a href="/system/user?action=update&uid={{row['uid']}}" class="btn btn-xs btn-primary">编辑</a>
+				<button type="button" class="btn btn-xs btn-primary">停用</button>
+				<button type="button" class="btn btn-xs btn-primary">删除</button>
+			</td>
+          </tr>
+          {% end %}
+        </tbody>
+      </table>
+    </div>
+    
+
+</div>
+                </div>
+              <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{% include inc_footer.html%}
+	<!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ static_url("assets/js/custom.js") }}"></script>
+<script>
+function selectAll(enable){
+	$("[type='checkbox']").attr("checked",enable);
+}
+
+$("#selectAll").click(function(){selectAll(true)});
+$("#cancelAll").click(function(){selectAll(false)});
+
+</script>
+
+</body>
+</html>

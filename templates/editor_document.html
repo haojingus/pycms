@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑文档</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="/static/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="/static/assets/css/font-awesome.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="/static/assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="/static/assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="/static/assets/css/cyrillic-ext.css" rel='stylesheet' type='text/css' />
+	<style>
+	{{ forminfo['css']}}
+	</style>
+</head>
+<body >
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="progressModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">发布进度</h4>
+				</div>
+				<div class="modal-body">
+					<div class="progress">
+				        <div id="progress_publish" class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+						0%
+						</div>
+					</div>	
+					<div id='publish_log'></div>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+
+<!--model end-->
+
+<div id="wrapper">
+{% include inc_nav.html %}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">文档编辑</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row" id="app">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           文档　请使用Chrome浏览器或国产浏览器(360、QQ)的极速模式
+                        </div>
+                        <div class="panel-body center-block">
+                            <form role="form">
+								{{forminfo['html']}}
+								<hr>
+							<!--	
+								<div class="form-group">
+									<label>预览地址</label>
+									<input type="text" class="form-control" id="preview_url" value="" disabled/>
+								</div>
+							-->
+								<div class="form-group">
+									<label style="width:100%;">发布地址</label>
+									<input type="text" class="form-control" id="publish_url" v-model="system_data.publish_url" style="display:inline-block;"/>
+									<label>不要乱动，会被开除的</label>
+								</div>
+	                            <input type="hidden" id="action" name="action" value="{{action}}">
+								<input type="hidden" id="project_id" value="{{project_id}}">
+								<input type="hidden" id="template_id" value="{{template_id}}">
+								<input type="hidden" id="form_fields" value="{{form_fields}}">
+								<input type="hidden" id="document_id" value="{{document_id}}">
+
+                                <button id="save" type="button" class="btn btn-info">保存</button>
+								<button style="margin-left:10px;" id="publish" type="button" class="btn btn-info" onclick='make_document(false);'>发布</button>
+								<button style="margin-left:10px;" id="preview" type="button" class="btn btn-info" onclick='make_document(true);'>预览</button>
+
+                            </form>
+							<div id='console'></div>
+                        </div>
+                        </div>
+                            </div>
+       </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+        <a  data-toggle="modal" data-target="#progressModal" title="六趣网络">&copy; 2017 北京六趣网络科技有限公司</a>
+    </div>
+
+
+
+
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="/static/assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/static/assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/static/assets/js/jquery.metisMenu.js"></script>
+	<script src="/static/assets/js/custom.js"></script>
+
+	<script src="/static/js/vue-2.6.10.js"></script>
+	<!--<script src="/static/js/vue-1.0.11.js"></script>-->
+	<script src="{{ static_url("js/cms.js") }}"></script>
+<script>
+var cmsobj = Object.create(Cms);
+cmsobj.publish_running = false;
+cmsobj.fid_set = "{{form_fields}}";
+
+
+//加载用户数据
+//init vue data
+//eg:vm.$set('sp1_submit_data',json); version 1.X
+//eg:Vue.set(vm.cmsData,key,value); version 2.X
+//only support input type
+//change 20180403
+{% for item in fields_data %}
+vm.$set(vm.submit_data,'sp{{item['field_id']}}_submit_data',decodeURIComponent(window.atob(`{{item['field_value']}}`)));
+{% end %}
+vm.$set(vm.system_data,'publish_url','{{publish_url}}');
+//插件初始化js
+{{forminfo['js']}}
+//插件初始化js end
+
+
+//处理submit数据
+var convert_submit_data = function(){
+cmsobj.clean_error();
+{{forminfo['submit']}}
+}
+
+
+var showmsg = function(obj){
+if (obj.code ===200){
+    //console.log('templete parse=====>',obj['result']);
+	//var cms_result = JSON.parse(obj['result']);
+    let cms_result = obj['result'];
+	//console.log('templete end!!!');
+	for (var i=0;i<cms_result.length;i++){
+	    let _vue_data = '';
+		try{
+
+            _vue_data = (cms_result[i]['result'].length==0)?'':JSON.parse(cms_result[i]['result']);
+
+		}
+		catch(err)
+		{
+			alert("spx_develop_data JSON decode err."+err.message);
+		}
+		vm.$set(vm.dev_data,'sp'+cms_result[i]['field_id']+'_developer_data',_vue_data);
+		//console.log(_vue_data);
+		}
+	cmsobj.callback();
+	cmsobj.publish_running = false;
+
+	}
+}
+
+var init_field = function(){
+	let pid = $("input#project_id").val();
+	let tid = $("input#template_id").val();
+
+	cmsobj.send_task('input',false,pid,tid,0,showmsg);
+}
+
+
+$("button#save").click(function(){
+	convert_submit_data();
+	if (!cmsobj.vaild){
+		alert(cmsobj.error_stack.join('\n'));
+		return;
+	}
+	var action = $("input#action").val();
+	cmsobj.save_document(action,function(data,did,msg){
+			if (did>0)
+			{
+				$("input#document_id").val(did);
+				$("input#action").val("update");
+				alert('入库成功');
+			}
+			else
+			{
+				alert('入库失败，原因'+msg);
+			}
+		});
+	});
+
+//var arr_field = cms_form_field.split(',');
+
+
+
+var make_document = function(preview){
+	if(cmsobj.publish_running){
+		alert('正在跑发布任务呢！');
+		return;
+	}
+	else
+	{
+		//转换submit数据
+		convert_submit_data();
+		//检查合法性
+		if (!cmsobj.vaild){
+			alert(cmsobj.error_stack.join('\n'));
+			return;
+		}
+
+		//先保存一下数据
+		$('#progressModal').modal('show');
+		$("#publish_log").text("正在保存文档，网不好的时候别瞎点！");
+		var action = $("input#action").val();
+		cmsobj.save_document(action,function(data,did,msg){
+			if(did>0){
+				data['did'] = did;
+				$("input#document_id").val(did);
+				$("input#action").val("update");
+				cmsobj.send_task('script',preview,data['pid'],data['tid'],data['did'],function(obj){
+					console.log(obj);
+					$("#progress_publish").css('width',obj.progress+'%');
+					$("#progress_publish").text(obj.progress + '%');
+					$("#publish_log").text(obj.errmsg);
+					if (obj.code==200){
+						if (!preview)
+							$("input#publish_url").val(obj.url);
+						else
+							$("#publish_log").html('<a href="/editor/document?action=preview&pid='+obj.pid+'&url='+obj.url+'" target="_blank">点击查看</a>');
+					}
+					if (obj.code !=201)
+						cmsobj.publish_running = false;
+
+				});
+			}
+			else
+			{
+				alert('入库失败');
+			}
+		});
+
+	}
+}
+//初始化field插件
+init_field();
+
+//$("button#publish").click(alert('1'));
+//$("button#preview").click(make_document(true));
+
+
+</script>
+</body>
+<!--20180402-->
+</html>
+

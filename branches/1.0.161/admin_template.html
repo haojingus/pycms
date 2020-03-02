@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>内容发布系统</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="{{ static_url("assets/css/bootstrap.css") }}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="{{ static_url("assets/css/font-awesome.css") }}" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="{{ static_url("assets/css/basic.css") }}" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="{{ static_url("assets/css/custom.css") }}" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="{{ static_url("assets/css/cyrillic-ext.css") }}" rel='stylesheet' type='text/css' />
+	<!-- CMS UI -->
+	<link href="{{ static_url("assets/css/cmsui.css") }}" rel='stylesheet' type='text/css' />
+	<!-- CodeMirror -->
+	<link rel="stylesheet" href="{{ static_url("js/codemirror/lib/codemirror.css") }}">
+	<script src="{{ static_url("js/codemirror/lib/codemirror.js") }}"></script>
+	<script src="{{ static_url("js/codemirror/addon/mode/loadmode.js") }}"></script>
+	<script src="{{ static_url("js/codemirror/mode/meta.js") }}"></script>
+	<style type="text/css">
+	.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+	</style>
+</head>
+<body>
+    <div id="wrapper">
+	{% include inc_nav.html %}
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">项目管理</h1>
+                        <div class="panel panel-primary">
+                        	<div class="panel-heading">
+                           变量和插件
+                        	</div>
+                        	 <div class="panel-body">
+                        	 <!-- mutiple select start -->
+                        	  <div class="row">
+                        	  <div class="col-md-4">
+                        	  <div class="form-group">
+                                            <label>全局变量</label>
+                                            <select class="form-control" size="8">
+											{% for var in variables%}
+                                                <option value="{{var[0]}}">{{var[1]}}</option>
+											{% end %}
+                                            </select>
+                               </div>
+                               </div>
+                               
+                               <div class="col-md-4">
+                        	  <div class="form-group">
+                                            <label>模板域</label>
+                                            <select class="form-control" size="8">
+											{% for field in fields %}
+                                                <option value="{{field['name']}}">{{field['cname']}}</option>
+											{% end %}
+
+                                            </select>
+                               </div>
+                               </div>
+                               
+                               <div class="col-md-4">
+                        	  <div class="form-group">
+                                            <label>组件</label>
+                                            <select class="form-control" size="8">
+											{% for component in components %}
+                                                <option value="{{component[4]}}">{{escape(component[4])}}</option>
+											{% end %}
+                                            </select>
+                               </div>
+                               </div>
+                               
+							   </div>
+							    <!-- mutiple select end -->
+
+								<!-- button start-->
+								<div class="row">
+								<div class="col-md-4"><button type="button" class="btn btn-sm btn-primary">+全局变量</button></div>
+								<div class="col-md-4"><!--<button type="button" class="btn btn-sm btn-primary">Primary</button>--></div>
+								<div class="col-md-4"><a class="btn btn-sm btn-primary" href="/admin/component?action=list&pid={{project_id}}">组件管理</a></div>
+								</div>
+
+								<!--button end-->
+							 </div>
+                        </div>
+                        <!-- panel primary end -->                       
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           模板属性
+                        </div>
+                        <div class="panel-body center-block">
+                            <form role="form">
+                                        <div class="form-group" style="width:50%;">
+                                            <label>模板名称</label>
+                                            <input id="name" name="name" class="form-control" type="text" value="{{template['template_name']}}">
+										</div>
+                                        <div class="form-group" style="width:50%;">
+                                            <label>模板摘要</label>
+                                            <textarea id="summary" name="summary" class="form-control" rows="2">{{template['template_summary']}}</textarea>
+										</div>
+									<!-- 模板视图 start -->
+										<div class="form-group">
+											<label>模板视图</label>
+											<!--nav tabs-->
+											<ul id="cmsTab" class="nav nav-tabs">
+											{% for i in range(0,len(views)) %}
+											<li {% if i==0 %}class="active" {% end %}id='viewtab_{{views[i]['view_id']}}'><a href="#view_{{views[i]['view_id']}}" data-toggle="tab">{{views[i]['view_name']}}</a><div class="closeBtn" onclick="templateUI.remove({{views[i]['view_id']}})"></div></li>
+											{% end %}
+											<li><a id="addView" href="#add">新增</a><div class="closeBtn"></div></li>
+											</ul>
+											<!--nav tabs end-->
+											<!--nav tabs block start-->
+											<div id="cmsTabContent" class="tab-content">
+											{%for i in range(0,len(views))%}
+												<div class="tab-pane fade {% if i==0 %} in active{%end%}" id="home">
+													<div class="form-group">
+													<label>视图内容</label>
+													<textarea id="code_{{views[i]['view_id']}}"  class="form-control" rows="10">{{template['template_view']}}</textarea>
+													</div>
+													<div class="form-group">
+													<label>发布路径</label>
+													<input id="publish_url_{{views[i]['view_id']}}" name="publish_url" class="form-control" type="text" value="{{views[i]['publish_url']}}">
+													</div>
+												</div>
+											{%end%}
+											</div>
+											<!--nav tabs block end-->
+
+										</div>
+									<!-- 模板视图 end -->
+										<div class="form-group">
+											<label>模板回调配置</label>
+											<textarea id="callback" name="callback" class="form-control" rows="10">{{template['publish_callback']}}</textarea>
+										</div>
+										<div class="form-group">
+											<label>发布路径模板</label>
+											<input id="url" type="text" class="form-control" value="{{template['publish_url']}}" spellcheck="false">
+										</div>
+
+                                        <div class="form-group">
+											<div class="checkbox">
+                                            <label><input id="enable" name="enable" type="checkbox" {%if template['enable']==1%}checked{%end%}>是否启用</label>
+											</div>
+                                        </div>
+										<input type="hidden" id="action" name="action" value="{{action}}">
+										<input type="hidden" id="project_id" name="project_id" value="{{project_id}}">
+										<input type="hidden" id="template_id" name="template_id" value="{{template_id}}">
+                                        <button id="submit" name="submit" type="button" class="btn btn-info">提交</button>
+
+                                    </form>
+                            </div>
+                        </div>
+                            </div>
+       </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+        <a href="http://www.66rpg.com/" target="_blank" title="六趣网络">&copy; 2017 北京六趣网络科技有限公司</a>
+    </div>
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ static_url("assets/js/custom.js") }}"></script>
+    <script>
+	$(function () {
+		$('#cmsTab li:eq(1) a').tab('show');
+	});
+	</script>
+    <script>
+	//CodeMirror component script
+	//****************************
+	CodeMirror.modeURL = "/static/js/codemirror/mode/%N/%N.js";
+	var editor = CodeMirror.fromTextArea(document.getElementById("code"), {lineNumbers: true});
+	function change() {
+		var val = "htmlmixed", m, mode, spec;
+		if (m = /.+\.([^.]+)$/.exec(val)) {
+			var info = CodeMirror.findModeByExtension(m[1]);
+				if (info) {
+					mode = info.mode;
+					spec = info.mime;
+				}
+		} else if (/\//.test(val)) {
+			var info = CodeMirror.findModeByMIME(val);
+			if (info) {
+				mode = info.mode;
+				spec = val;
+			}
+		} else {
+			mode = spec = val;
+		}
+		if (mode) {
+			editor.setOption("mode", spec);
+			CodeMirror.autoLoadMode(editor, mode);
+		} else {
+			alert("Could not find a mode corresponding to " + val);
+		}
+	}
+
+	change();
+	//Form post
+	//************************
+	$("button#submit").click(function(){
+		$("button#submit").prop("disabled",true);
+		editor.save();
+		var cms_pid = $("input#project_id").val();
+		var cms_tid = $("input#template_id").val();
+		var cms_name = $.trim($("input#name").val());
+		var cms_summary = $.trim($("textarea#summary").val());
+		/*ver 1.0*/
+		//var cms_view = $.trim($("textarea#code").val());
+		/*ver 1.5*/
+		var cms_view = [];
+		var _cms_view_info = {};
+		for (i=0;i<$("#cmsTabContent .tab-pane").length;i++)
+		{
+			_cms_view_info['view'] = $("#cmsTabContent .tab-pane").eq(i).find("textarea").val();
+			_cms_view_info['url'] = $("#cmsTabContent .tab-pane").eq(i).find("input").val();
+			cms_view.push({view:_cms_view_info['view'],url:_cms_view_info['url']});
+		}
+
+		var cms_callback = $.trim($("textarea#callback").val());
+		var cms_enable = $("input#enable").prop('checked')?'1':'0';
+		var cms_url = $.trim($("input#url").val());
+
+		if (cms_name.length==0||cms_summary.length==0){
+			$("button#submit").prop("disabled",false);
+			alert('模板名称和摘要不能为空');
+			return false;
+		}
+
+		if (cms_callback!=''){
+			try{
+				var callback_test = JSON.parse(cms_callback);
+			}
+			catch(err){
+				$("button#submit").prop("disabled",false);
+				alert('回调格式错误，此处必须是json格式，或为空');
+				return false;
+			}
+
+		}
+		var _url = cms_url.replace('{$did}','_did_')
+						.replace('{$pid}','_pid_')
+						.replace('{$tid}','_tid_')
+						.replace('{$Y}','_Y_')
+						.replace('{$m}','_m_')
+						.replace('{$d}','_d_')
+						.replace('{$H}','_H_')
+						.replace('{$M}','_M_')
+						.replace('{$S}','_S_');
+		var pattern  = new RegExp("^(/[0-9a-zA-Z_]+)+\.(shtml|html|shtm|htm|php|json|xml)");
+		if (!pattern.test(_url)){
+			$("button#submit").prop("disabled",false);
+			alert('发布路径格式错误，请参考说明格式！');
+			return false;
+		}
+	var action = "/admin/template?action="+$("input#action").val()
+	$.post(action,{pid:cms_pid,tid:cms_tid,name:cms_name,summary:cms_summary,view:cms_view,callback:cms_callback,url:cms_url,enable:cms_enable},function(result){
+		var obj = JSON.parse(result);
+		if(obj.code==0){
+			alert('添加成功！');
+			$(location).prop('href', '/admin/template?action=list&pid='+cms_pid);
+			//$("input#template_id").val(obj.tid);
+			//$("input#action").val("update");
+		} else {
+			alert('添加失败！'+obj.errmsg);
+			$("button#submit").prop("disabled",false);
+		}
+		});
+
+	});
+
+	//mutiview
+	$("#cmsTab [href='#add']").click(function(){
+		//add view
+		var _cms_view_name = prompt("请输入新的视图名称","");
+		if (typeof(_cms_view_name)=="undefined"){
+			return false;
+		}
+		if ($.trim(_cms_view_name)=="")
+		{
+			alert("名字不能为空");
+			return false;
+		}
+		_view_count = $("#cmsTab li").length;
+		
+		$("#cmsTab li").eq(-2).after(`<li><a href="#view_`+_view_count+`" data-toggle="tab">`+_cms_view_name+`</a><div class="closeBtn"></div></li>`);
+		$("#cmsTabContent .tab-pane:last").after(`<div class="tab-pane fade" id="view_`+_view_count+`"><div class="form-group"><label>视图:</label><textarea class="form-control" rows="8"></textarea></div><div class="form-group"><label>发布地址：</label><input class="form-control" type="text"></div></div>`);
+
+	});
+
+
+	</script>
+</body>
+</html>

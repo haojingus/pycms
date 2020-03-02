@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% include inc_header.html %}
+</head>
+<body>
+    <div id="wrapper">
+		{% include inc_nav.html %}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">组件管理</h1>
+                        <h1 class="page-subhead-line">用于管理广告和统计组件. </h1>
+                    </div>
+                </div>
+                 <div class="row">
+                   <div class="col-md-12">
+                   <div class="btn-group">
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle">批量操作 <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+											<li class="divider"></li>
+											<li><a href="#" id="selectAll">全选</a></li>
+											<li><a href="#" id="cancelAll">取消</a></li>
+                                            <li class="divider"></li>
+			                                <li><a href="/admin/component?action=add&pid={{project_id}}">新建组件</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">删除</a></li>
+                                        </ul>
+                                    </div>
+                       <div class="panel panel-primary">
+                           
+      <!-- Default panel contents -->
+      <div class="panel-heading">组件列表</div>
+
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th width="10%">ID</th>
+            <th width="15%">名称</th>
+			<th width="15%">中文名</th>
+			<th>简介</th>
+			<th width="15%">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {%for row in components %}
+          <tr class="list-group-item-success">
+            <td><input type="checkbox" value="{{row[0]}}" />{{row[0]}}</td>
+			<td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+			<td>{{row[3]}}</td>
+			<td>
+				<a class="btn btn-xs btn-primary" href="/admin/component?action=update&pid={{project_id}}&cid={{row[0]}}">编辑</a>
+				<button type="button" class="btn btn-xs btn-primary">删除</button>
+			</td>
+          </tr>
+          {% end %}
+        </tbody>
+      </table>
+
+    </div>
+    
+
+</div>
+                </div>
+              <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    {% include inc_footer.html%}
+	<!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ static_url("assets/js/custom.js") }}"></script>
+<script>
+function selectAll(enable){
+	$("[type='checkbox']").attr("checked",enable);
+}
+
+$("#selectAll").click(function(){selectAll(true)});
+$("#cancelAll").click(function(){selectAll(false)});
+
+</script>
+
+</body>
+</html>

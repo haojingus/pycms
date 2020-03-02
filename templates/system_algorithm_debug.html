@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑文档</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="/static/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="/static/assets/css/font-awesome.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="/static/assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="/static/assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="/static/assets/css/cyrillic-ext.css" rel='stylesheet' type='text/css' />
+	<style>
+	{% if field['type']=='input' %}
+	{{ field['css'] }}
+	{%end%}
+	</style>
+</head>
+<body>
+
+<div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">内容发布系统-模板域管理</a>
+            </div>
+
+            <div class="header-right">
+
+              <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
+                <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
+                <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+
+
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">文档编辑</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row" id="app">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           文档
+                        </div>
+                        <div class="panel-body center-block">
+                            <form role="form">
+							 {% if field['type']=='input' %}
+								{{ field['html'].replace("{$field_id}","1").replace("{$field_name}","Test Field") }}
+							{%end%}
+								<hr>
+								
+								<div class="form-group">
+									<label>Input渲染结果,结果会JSON化后注入到js对象spx_develop_data中，请务必确保结果是可JSON化的</label>
+									<div>{{tinput}}</div>
+								</div>
+							
+								<div class="form-group">
+									<label>Script渲染结果</label>
+									<div>{{tscript}}</div>
+								</div>
+							
+
+                            </form>
+							<div id='console'></div>
+                        </div>
+                        </div>
+                            </div>
+       </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+        <a  data-toggle="modal" data-target="#progressModal" title="六趣网络">&copy; 2017 北京六趣网络科技有限公司</a>
+    </div>
+
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="/static/js/jquery.min.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/static/assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/static/assets/js/jquery.metisMenu.js"></script>
+	<script src="/static/assets/js/custom.js"></script>
+	<script src="/static/js/vue-2.6.10.js"></script>
+	<script src="/static/js/cms.js"></script>
+<script>
+var cmsobj = Object.create(Cms);
+//插件developer数据初始化
+vm.$set(vm.dev_data, 'sp1_developer_data', JSON.parse('{{tinput}}'));
+//加载用户数据
+//init vue data
+//eg:vm.$set('sp1_submit_data',json);
+//only support input type
+vm.$set(vm.submit_data, 'sp1_submit_data', '{{tscript.replace("'","\\'").replace("\n","\\n").replace("\r","")}}');
+
+
+
+//插件初始化js
+{% if field['type']=='input' %}
+{{field['js'].replace("{$field_id}","1").replace("{$field_name}","Test Field")}}
+{% end %}
+//插件初始化js end
+
+
+//处理submit数据
+var convert_submit_data = function(){
+cmsobj.clean_error();
+{% if field['type']=='input' %}
+{{field['submit'].replace("{$field_id}","1").replace("{$field_name}","Test Field")}}
+{% end %}
+}
+
+</script>
+</body>
+</html>
+

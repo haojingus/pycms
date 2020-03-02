@@ -1,0 +1,1 @@
+[{"name":"get_token","url":"http://passport.66rpg.com/api/login","x":"post","params":[{"name":"remember_me"},{"name":"username"},{"name":"password"},{"name":"plu"},{"name":"plt"},{"name":"verify"}]},{"name":"get_user_info","url":"http://passport.66rpg.com/internal/get_userinfo_for_authcode","x":"get","params":[{"name":"auth_code"}]}]

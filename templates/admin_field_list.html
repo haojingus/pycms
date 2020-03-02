@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% include inc_header.html%}
+</head>
+<body>
+    <div id="wrapper">
+		{% include inc_nav.html%}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">模板域管理</h1>
+                        <h1 class="page-subhead-line">可执行站点模板域的设置. </h1>
+                    </div>
+                </div>
+                 <div class="row">
+                   <div class="col-md-12">
+                   <div class="btn-group">
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle">批量操作 <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+											<li><a href="/admin/field?action=add&pid={{project_id}}&tid={{template_id}}">新建模板域</a></li>
+											<li class="divider"></li>
+											<li><a href="#" id="selectAll">全选</a></li>
+											<li><a href="#" id="cancelAll">取消</a></li>
+											<!--
+                                            <li class="divider"></li>
+											<li><a href="#" data-toggle="modal" data-target="#myModal">启动</a></li>
+                                            <li><a href="#">停用</a></li>
+                                            
+                                            <li class="divider"></li>
+                                            <li><a href="#">删除</a></li>-->
+                                        </ul>
+                                    </div>
+                       <div class="panel panel-primary">
+                           
+      <!-- Default panel contents -->
+      <div class="panel-heading">组件列表</div>
+
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>名称</th>
+			<th>类型</th>
+			<th>显示</th>
+			<th>创建时间</th>
+			<th>更新时间</th>
+			<th>状态</th>
+			<th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {%for row in fields %}
+          <tr class="list-group-item-success">
+            <td><input type="checkbox" value="{{row['field_id']}}" />{{row['field_id']}}</td>
+            <td>{{row['field_name']}}</td>
+			<td>{{row['field_type']}}</td>
+			<td>{% if row['is_show']==True %}是{% else %}否{% end %}</td>
+			<td>{{row['create_time']}}</td>
+			<td>{{row['update_time']}}</td>
+			<td>{% if row['enable']==1 %}启用{% else %}停用{% end %}</td>
+			<td>
+				<a href="/admin/field?action=update&pid={{project_id}}&tid={{template_id}}&fid={{row['field_id']}}" class="btn btn-xs btn-primary" value="{{row['field_id']}}">编辑</a>
+				<button type="button" class="btn btn-xs btn-primary" onclick="alert('HAO Jing说了，这个功能不安全');">停用</button>
+				<button type="button" class="btn btn-xs btn-primary" onclick="alert('HAO Jing说了，这个功能不安全');">删除</button>
+			</td>
+          </tr>
+          {% end %}
+        </tbody>
+      </table>
+	  <input type="hidden" id="pid" name="pid" value="{{project_id}}">
+    </div>
+    
+
+</div>
+                </div>
+              <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{%include inc_footer.html%}
+	<!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ static_url("assets/js/custom.js") }}"></script>
+<script>
+function selectAll(enable){
+	$("[type='checkbox']").attr("checked",enable);
+}
+
+$("#selectAll").click(function(){selectAll(true)});
+$("#cancelAll").click(function(){selectAll(false)});
+
+</script>
+
+</body>
+</html>

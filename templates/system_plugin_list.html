@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% include inc_header.html %}
+</head>
+<body>
+    <div id="wrapper">
+		{% include inc_nav.html %}
+		<!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">模板域插件管理</h1>
+                        <h1 class="page-subhead-line">可进行插件的在线开发和调试. </h1>
+                    </div>
+                </div>
+                 <div class="row">
+                   <div class="col-md-12">
+                   <div class="btn-group">
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle">批量操作 <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+											<li><a href="/system/plugin?action=add" id="create">新建插件</a></li>
+											<li class="divider"></li>
+											<li><a href="#" id="selectAll">全选</a></li>
+											<li><a href="#" id="cancelAll">取消</a></li>
+                                            <li class="divider"></li>
+											<li><a href="#" data-toggle="modal" data-target="#myModal">启动</a></li>
+                                            <li><a href="#">停用</a></li>
+                                            
+                                            <li class="divider"></li>
+                                            <li><a href="#">删除</a></li>
+                                        </ul>
+                                    </div>
+                       <div class="panel panel-primary">
+                           
+      <!-- Default panel contents -->
+      <div class="panel-heading">模板域插件列表</div>
+
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th width="20%">名称</th>
+            <th width="20%">中文名</th>
+			<th>类型</th>
+			<th>I/O方式</th>
+			<th>排序</th>
+			<th width="20%">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {%for row in plugins %}
+          <tr class="list-group-item-success">
+            <td><input type="checkbox" value="{{row['name']}}" />{{row['name']}}</td>
+            <td>{{row['cname']}}</td>
+			<td>{{row['field_type']}}</td>
+			<td>{{row['type']}}</td>
+			<td>{{row['order']}}</td>
+			<td>
+				<a href="/system/plugin?action=update&type={{row['field_type']}}" class="btn btn-xs btn-primary">编辑</a>
+				<button type="button" class="btn btn-xs btn-primary">停用</button>
+				<button type="button" class="btn btn-xs btn-primary">删除</button>
+			</td>
+          </tr>
+          {% end %}
+        </tbody>
+      </table>
+    </div>
+    
+
+</div>
+                </div>
+              <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{% include inc_footer.html %}
+	<!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ static_url("assets/js/custom.js") }}"></script>
+<script>
+function selectAll(enable){
+	$("[type='checkbox']").attr("checked",enable);
+}
+
+$("#selectAll").click(function(){selectAll(true)});
+$("#cancelAll").click(function(){selectAll(false)});
+
+</script>
+
+</body>
+</html>

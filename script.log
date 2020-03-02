@@ -1,0 +1,305 @@
+continue-1 {'progress': 0, 'tag': 'script', 'pid': 23, 'user': 'test', 'did': 1, 'code': 201, 'smid': 'script_23_1_1', 'errmsg': 'ready', 'preview': 'N', 'tid': 1}
+continue-2
+{'progress': 0, 'tag': 'script', 'pid': 23, 'user': 'test', 'did': 1, 'code': 201, 'smid': 'script_23_1_1', 'errmsg': 'ready', 'preview': 'N', 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7ff9c44b0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'errmsg': 'ready', 'user': 'test', 'code': 201, 'smid': 'script_23_1_1', 'tid': 1, 'tag': 'script', 'pid': 23, 'did': 1, 'preview': 'N', 'progress': 0}
+continue-2
+{'errmsg': 'ready', 'user': 'test', 'code': 201, 'smid': 'script_23_1_1', 'tid': 1, 'tag': 'script', 'pid': 23, 'did': 1, 'preview': 'N', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7f4fa2e30d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'progress': 0, 'user': 'test', 'smid': 'script_23_1_1', 'errmsg': 'ready', 'preview': 'Y', 'pid': 23, 'tid': 1, 'code': 201, 'tag': 'script', 'did': 1}
+continue-2
+{'progress': 0, 'user': 'test', 'smid': 'script_23_1_1', 'errmsg': 'ready', 'preview': 'Y', 'pid': 23, 'tid': 1, 'code': 201, 'tag': 'script', 'did': 1}
+{'23': <pymysql.connections.Connection object at 0x7f2068bf0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'smid': 'script_23_1_1', 'code': 201, 'progress': 0, 'did': 1, 'errmsg': 'ready', 'tag': 'script', 'pid': 23, 'tid': 1, 'preview': 'Y', 'user': 'test'}
+continue-2
+{'smid': 'script_23_1_1', 'code': 201, 'progress': 0, 'did': 1, 'errmsg': 'ready', 'tag': 'script', 'pid': 23, 'tid': 1, 'preview': 'Y', 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f9886570d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'smid': 'script_23_1_1', 'code': 201, 'progress': 0, 'did': 1, 'tid': 1, 'user': 'test', 'errmsg': 'ready', 'tag': 'script', 'preview': 'N'}
+continue-2
+{'pid': 23, 'smid': 'script_23_1_1', 'code': 201, 'progress': 0, 'did': 1, 'tid': 1, 'user': 'test', 'errmsg': 'ready', 'tag': 'script', 'preview': 'N'}
+{'23': <pymysql.connections.Connection object at 0x7f23d06f0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'smid': 'script_23_1_1', 'progress': 0, 'code': 201, 'user': 'test', 'pid': 23, 'tag': 'script', 'preview': 'Y', 'did': 1, 'errmsg': 'ready', 'tid': 1}
+continue-2
+{'smid': 'script_23_1_1', 'progress': 0, 'code': 201, 'user': 'test', 'pid': 23, 'tag': 'script', 'preview': 'Y', 'did': 1, 'errmsg': 'ready', 'tid': 1}
+{'23': <pymysql.connections.Connection object at 0x7faf83330d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'pid': 23, 'progress': 0, 'code': 201, 'smid': 'script_23_1_1', 'preview': 'Y', 'did': 1, 'errmsg': 'ready', 'tid': 1, 'tag': 'script', 'user': 'test'}
+continue-2
+{'pid': 23, 'progress': 0, 'code': 201, 'smid': 'script_23_1_1', 'preview': 'Y', 'did': 1, 'errmsg': 'ready', 'tid': 1, 'tag': 'script', 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7fd8bbcf0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'user': 'test', 'pid': 23, 'progress': 0, 'code': 201, 'errmsg': 'ready', 'did': 1, 'smid': 'script_23_1_1', 'preview': 'Y', 'tid': 1, 'tag': 'script'}
+continue-2
+{'user': 'test', 'pid': 23, 'progress': 0, 'code': 201, 'errmsg': 'ready', 'did': 1, 'smid': 'script_23_1_1', 'preview': 'Y', 'tid': 1, 'tag': 'script'}
+{'23': <pymysql.connections.Connection object at 0x7f9ef2b30d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'did': 1, 'preview': 'Y', 'progress': 0, 'smid': 'script_23_1_1', 'tag': 'script', 'pid': 23, 'user': 'test', 'tid': 1, 'code': 201, 'errmsg': 'ready'}
+continue-2
+{'did': 1, 'preview': 'Y', 'progress': 0, 'smid': 'script_23_1_1', 'tag': 'script', 'pid': 23, 'user': 'test', 'tid': 1, 'code': 201, 'errmsg': 'ready'}
+{'23': <pymysql.connections.Connection object at 0x7f02a2ef0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'tag': 'script', 'tid': 1, 'preview': 'Y', 'smid': 'script_23_1_1', 'errmsg': 'ready', 'user': 'test', 'did': 1, 'code': 201, 'progress': 0, 'pid': 23}
+continue-2
+{'tag': 'script', 'tid': 1, 'preview': 'Y', 'smid': 'script_23_1_1', 'errmsg': 'ready', 'user': 'test', 'did': 1, 'code': 201, 'progress': 0, 'pid': 23}
+{'23': <pymysql.connections.Connection object at 0x7fccf10f0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'errmsg': 'ready', 'progress': 0, 'user': 'test', 'pid': 23, 'tag': 'script', 'smid': 'script_23_1_1', 'code': 201, 'tid': 1, 'preview': 'Y', 'did': 1}
+continue-2
+{'errmsg': 'ready', 'progress': 0, 'user': 'test', 'pid': 23, 'tag': 'script', 'smid': 'script_23_1_1', 'code': 201, 'tid': 1, 'preview': 'Y', 'did': 1}
+{'23': <pymysql.connections.Connection object at 0x7fe4881f0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+continue-1 {'progress': 0, 'errmsg': 'ready', 'tag': 'script', 'did': '1', 'code': 201, 'pid': '23', 'user': 'test', 'preview': 'N', 'tid': '1', 'smid': 'script_23_1_1'}
+continue-2
+{'progress': 0, 'errmsg': 'ready', 'tag': 'script', 'did': '1', 'code': 201, 'pid': '23', 'user': 'test', 'preview': 'N', 'tid': '1', 'smid': 'script_23_1_1'}
+{'23': <pymysql.connections.Connection object at 0x7f6798bf0d68>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'progress': 0, 'tag': 'script', 'tid': '1', 'code': 201, 'errmsg': 'ready', 'did': '1', 'smid': 'script_23_1_1', 'pid': '23', 'user': 'test', 'preview': 'N'}
+continue-2
+{'progress': 0, 'tag': 'script', 'tid': '1', 'code': 201, 'errmsg': 'ready', 'did': '1', 'smid': 'script_23_1_1', 'pid': '23', 'user': 'test', 'preview': 'N'}
+{'23': <pymysql.connections.Connection object at 0x7f75ec370d68>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'errmsg': 'ready', 'pid': '23', 'progress': 0, 'smid': 'script_23_1_1', 'preview': 'N', 'code': 201, 'did': '1', 'tag': 'script', 'tid': '1', 'user': 'test'}
+continue-2
+{'errmsg': 'ready', 'pid': '23', 'progress': 0, 'smid': 'script_23_1_1', 'preview': 'N', 'code': 201, 'did': '1', 'tag': 'script', 'tid': '1', 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f72f3e30d68>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'tag': 'script', 'code': 201, 'did': '1', 'preview': 'N', 'pid': '23', 'user': 'test', 'tid': '1', 'errmsg': 'ready', 'smid': 'script_23_1_1', 'progress': 0}
+continue-2
+{'tag': 'script', 'code': 201, 'did': '1', 'preview': 'N', 'pid': '23', 'user': 'test', 'tid': '1', 'errmsg': 'ready', 'smid': 'script_23_1_1', 'progress': 0}
+{'23': <pymysql.connections.Connection object at 0x7f0291570d68>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'user': 'test', 'pid': '23', 'smid': 'script_23_1_1', 'tid': '1', 'code': 201, 'errmsg': 'ready', 'tag': 'script', 'preview': 'N', 'progress': 0, 'did': '1'}
+continue-2
+{'user': 'test', 'pid': '23', 'smid': 'script_23_1_1', 'tid': '1', 'code': 201, 'errmsg': 'ready', 'tag': 'script', 'preview': 'N', 'progress': 0, 'did': '1'}
+{'23': <pymysql.connections.Connection object at 0x7f4b075f0d68>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'progress': 0, 'code': 201, 'pid': '23', 'tid': '1', 'smid': 'script_23_1_1', 'errmsg': 'ready', 'did': '1', 'tag': 'script', 'preview': 'N', 'user': 'test'}
+continue-2
+{'progress': 0, 'code': 201, 'pid': '23', 'tid': '1', 'smid': 'script_23_1_1', 'errmsg': 'ready', 'did': '1', 'tag': 'script', 'preview': 'N', 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f493cd30d68>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'pid': 23, 'progress': 0, 'errmsg': 'ready', 'user': 'test', 'tid': 1, 'smid': 'script_23_1_1', 'did': 1, 'tag': 'script', 'code': 201, 'preview': 'N'}
+continue-2
+{'pid': 23, 'progress': 0, 'errmsg': 'ready', 'user': 'test', 'tid': 1, 'smid': 'script_23_1_1', 'did': 1, 'tag': 'script', 'code': 201, 'preview': 'N'}
+{'23': <pymysql.connections.Connection object at 0x7fa55e5f0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'smid': 'script_23_1_1', 'progress': 0, 'tag': 'script', 'preview': 'N', 'tid': 1, 'user': 'test', 'code': 201, 'pid': 23, 'did': 1, 'errmsg': 'ready'}
+continue-2
+{'smid': 'script_23_1_1', 'progress': 0, 'tag': 'script', 'preview': 'N', 'tid': 1, 'user': 'test', 'code': 201, 'pid': 23, 'did': 1, 'errmsg': 'ready'}
+{'23': <pymysql.connections.Connection object at 0x7fb8e3470d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'errmsg': 'ready', 'pid': 23, 'user': 'test', 'code': 201, 'preview': 'N', 'progress': 0, 'did': 1, 'smid': 'script_23_1_1', 'tid': 1, 'tag': 'script'}
+continue-2
+{'errmsg': 'ready', 'pid': 23, 'user': 'test', 'code': 201, 'preview': 'N', 'progress': 0, 'did': 1, 'smid': 'script_23_1_1', 'tid': 1, 'tag': 'script'}
+{'23': <pymysql.connections.Connection object at 0x7ff5150f0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'smid': 'script_23_1_1', 'progress': 0, 'tag': 'script', 'did': 1, 'preview': 'N', 'code': 201, 'errmsg': 'ready', 'pid': 23, 'tid': 1, 'user': 'test'}
+continue-2
+{'smid': 'script_23_1_1', 'progress': 0, 'tag': 'script', 'did': 1, 'preview': 'N', 'code': 201, 'errmsg': 'ready', 'pid': 23, 'tid': 1, 'user': 'test'}
+{'23': <pymysql.connections.Connection object at 0x7f64b6cf0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+continue-1 {'progress': 0, 'tid': 1, 'preview': 'N', 'did': 1, 'code': 201, 'user': 'test', 'pid': 23, 'smid': 'script_23_1_1', 'tag': 'script', 'errmsg': 'ready'}
+continue-2
+{'progress': 0, 'tid': 1, 'preview': 'N', 'did': 1, 'code': 201, 'user': 'test', 'pid': 23, 'smid': 'script_23_1_1', 'tag': 'script', 'errmsg': 'ready'}
+{'23': <pymysql.connections.Connection object at 0x7f76fdef0d30>}
+continue-3
+continue-4 select `sp_1`,`sp_2`,`sp_3`,`create_time`,IFNULL(`publish_url`,''),`create_user` from `cms_tbl_1` where `document_id`=1 script
+continue-5
+C-SQL:
+[]
+C-SQL:
+[]
+C-SQL:
+[]
+start rsync by cms
+sending incremental file list
+12.shtml
+
+sent 205 bytes  received 43 bytes  496.00 bytes/sec
+total size is 107  speedup is 0.43

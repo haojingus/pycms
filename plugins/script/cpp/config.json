@@ -1,0 +1,1 @@
+{"run":"node {$root}/plugins/script/es5/cmsapp.js %1","extname":"js"}

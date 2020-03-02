@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>内容发布系统</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="/static/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="/static/assets/css/font-awesome.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="/static/assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="/static/assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="/static/assets/css/cyrillic-ext.css" rel='stylesheet' type='text/css' />
+
+	<!-- CodeMirror -->
+	<link rel="stylesheet" href="/static/js/codemirror/lib/codemirror.css">
+	<script src="/static/js/codemirror/lib/codemirror.js"></script>
+	<script src="/static/js/codemirror/addon/mode/loadmode.js"></script>
+	<script src="/static/js/codemirror/mode/meta.js"></script>
+	<style type="text/css">
+		.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+	</style>
+</head>
+<body >
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">插件管理</a>
+            </div>
+
+            <div class="header-right">
+
+              <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
+                <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
+                <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+
+
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">模板域编辑</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row" id="app">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           模板域
+                        </div>
+                        <div class="panel-body center-block">
+                            <form role="form" id="plugin_form"  target="_blank" method="post">
+                                        <div class="form-group">
+                                            <label>模板域插件名称(英文名，首字母大写)</label>
+                                            <input id="name" name="name" class="form-control" type="text" style="width:30%;" spellcheck="false" v-model="system.name" >
+										</div>
+                                        <div class="form-group">
+                                            <label>中文名</label>
+                                            <input id="cname" name="cname" class="form-control" type="text"  spellcheck="false" style="width:30%;" v-model="system.cname">
+										</div>
+                                       <div class="form-group">
+                                            <label>类型名</label>
+                                            <input id="field_type" name="field_type" class="form-control" type="text" style="width:30%;"  spellcheck="false" v-model="system.field_type">
+										</div>
+                                       <div class="form-group">
+                                            <label>I/O类型</label>
+											<select name="type" class="form-control" id="type" style="width:20%;" v-model="system.type">
+												<option value="input">输入型</option>
+												<option value="output">输出型</option>
+											</select>
+										</div>
+                                        <div class="form-group">
+                                            <label>排序值</label>
+                                            <input id="order" name="order" class="form-control" type="text"  style="width:30%;" v-model="system.order">
+										</div>
+										<hr>
+                                        <div class="form-group">
+                                            <label>form.html(插件模板)</label>
+											<textarea id="html" name="html" class="form-control" rows="10" spellcheck="false" v-model="system.html"></textarea>
+										</div>
+                                        <div class="form-group">
+                                            <label>form.css(插件css)</label>
+											<textarea id="css" name="css" class="form-control" rows="10" spellcheck="false" v-model="system.css"></textarea>
+										</div>
+                                       <div class="form-group">
+                                            <label>form.js(插件初始化js，用于填充data.spx_develop_data)</label>
+											<textarea id="js" name="js" class="form-control" rows="10" spellcheck="false" v-model="system.js"></textarea>
+										</div>
+                                       <div class="form-group">
+                                            <label>form_submit.js(插件提取数据时的js，用于转换vue数据层到data.spx_submit_data)</label>
+											<textarea id="form_submit" name="form_submit" class="form-control" rows="10" spellcheck="false" v-model="system.submit"></textarea>
+										</div>
+										<hr>
+										<!--debug area-->
+										<div class="form-group">
+										测试数据:<br>{$field_id}=10086 <br>{$field_name}="测试模板域名称" <br>{$field_value}="测试默认值，会被用户数据覆盖"
+										</div>
+                                        <div class="form-group">
+                                            <label>input域测试数据(用于构建spx_develop_data)</label>
+											<textarea id="debug_input" name="debug_input" class="form-control" rows="10" spellcheck="false" v-model="system.debug_input"></textarea>
+										</div>
+                                        <div class="form-group">
+                                            <label>用户入库数据(即spx_submit_data用于构建spx_user_data).  注意!!! spx_submit_data为string,spx_user_data为json，需要自行完成JSON.parse</label>
+                                            <textarea id="debug_value" name="debug_value" class="form-control" rows="10" spellcheck="false" v-model="system.debug_value"></textarea>
+										</div>
+
+
+	                                  	<input type="hidden" id="action" name="action" v-model="system.action">
+
+                                        <button id="create" name="create" type="button" class="btn btn-info">提交</button>
+										<button id="debug" name="debug" class="btn btn-info">调试</button>
+                                    </form>
+                            </div>
+                        </div>
+                            </div>
+       </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+        <a href="http://www.66rpg.com/" target="_blank" title="六趣网络">&copy; 2017 北京六趣网络科技有限公司</a>
+    </div>
+
+
+
+
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="/static/assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/static/assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/static/assets/js/jquery.metisMenu.js"></script>
+	<script src="/static/assets/js/custom.js"></script>
+	<!--<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>-->
+    <script src="/static/js/vue-2.6.10.js"></script>
+    <script>
+        let raw_data = {html:'{{plugin['html']}}',
+            css:'{{plugin['css']}}',
+            js:'{{plugin['js']}}',
+            submit: '{{plugin['submit']}}',
+        };
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                user_data: {},
+                dev_data: {},
+                submit_data: {},
+                system : {
+                    action: '{{action}}',
+                    name: '{{plugin['name']}}',
+                    cname: '{{plugin['cname']}}',
+                    field_type: '{{plugin['field_type']}}',
+                    type: '{{plugin['type']}}',
+                    order: '{{plugin['order']}}',
+                    submit: '',
+                    html: '',
+                    css: '',
+                    js: '',
+                    debug_input: `{{plugin['debug_input']}}`,
+                    debug_value: `{{plugin['debug_value']}}`
+                }
+            }
+        });
+        let field_items = ['html','css','js','submit'];
+        field_items.forEach(function(item){vm.$set(vm.system, item, decodeURIComponent(window.atob(raw_data[item])));});
+
+        /*
+         if (vm.$get("action")=='update'){
+            vm.$set("name_enable","");
+            vm.$set("field_type_enable","");
+         }
+         else
+         {
+            vm.$set("name_enable",false);
+            vm.$set("field_type_enable",false);
+         }
+        */
+
+        $("button#debug").click(function(){
+            $("input#action").val("debug");
+            $("#plugin_form").prop('action','/system/plugin');
+            $("#plugin_form").submit();
+        });
+
+        $("button#create").click(function(){
+            $("input#action").val("add");
+            $("#plugin_form").prop('action','/system/plugin');
+            $("#plugin_form").submit();
+        });
+
+
+    </script>
+</body>
+</html>

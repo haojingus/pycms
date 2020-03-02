@@ -1,0 +1,10 @@
+<div class="form-group">
+	<label>{$field_name}</label>
+	<select class="form-control" id="group_{$field_id}"  v-model="user_data.sp{$field_id}_user_data"  style="width:400px;height:38px">
+                <template v-for="item in dev_data.sp{$field_id}_developer_data">
+		      <option  v-bind:value="item.value" v-if="item.selected" selected>{{item.name}}</option>
+                      <option  v-bind:value="item.value" v-else>{{item.name}}</option>
+                </template >
+	</select>
+</div>
+<span style="opacity:0">已选:{{user_data.sp{$field_id}_user_data}}</span>

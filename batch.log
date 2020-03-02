@@ -1,0 +1,7 @@
+TASK MAIL [{'progress': 0, 'didset': '1', 'code': 201, 'user': 'test', 'pid': 23, 'tid': 1, 'errmsg': 'ready'}]
+TASK MAIL [{'code': 201, 'didset': '1', 'errmsg': 'ready', 'progress': 0, 'pid': 23, 'tid': 1, 'user': 'test'}]
+TASK MAIL [{'user': 'test', 'didset': '1', 'errmsg': 'ready', 'progress': 0, 'tid': 1, 'pid': 23, 'code': 201}]
+TASK MAIL [{'progress': 0, 'code': 201, 'didset': '1', 'errmsg': 'ready', 'pid': 23, 'user': 'test', 'tid': 1}]
+TASK MAIL [{'tid': 1, 'progress': 0, 'didset': '1', 'errmsg': 'ready', 'pid': 23, 'code': 201, 'user': 'test'}]
+TASK MAIL [{'pid': 23, 'didset': '1', 'tid': 1, 'user': 'test', 'progress': 0, 'errmsg': 'ready', 'code': 201}]
+TASK MAIL [{'progress': 0, 'user': 'test', 'didset': '1', 'pid': 23, 'errmsg': 'ready', 'code': 201, 'tid': 1}]

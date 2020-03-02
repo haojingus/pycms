@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>内容发布系统-变量系统</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="{{ static_url("assets/css/bootstrap.css") }}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="{{ static_url("assets/css/font-awesome.css") }}" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="{{ static_url("assets/css/basic.css") }}" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="{{ static_url("assets/css/custom.css") }}" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="{{ static_url("assets/css/cyrillic-ext.css") }}" rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">内容发布系统</a>
+            </div>
+
+            <div class="header-right">
+
+              <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
+                <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
+                <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+
+
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		{% module Menu(userinfo) %}
+		</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">变量管理</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           变量属性
+                        </div>
+                        <div class="panel-body center-block" style="width:50%;">
+                            <form role="form">
+                                        <div class="form-group">
+                                            <label>变量名称</label>
+                                            <input id="vname" name="vname" class="form-control" type="text" >
+                                        </div>
+										<div class="form-group">
+                                            <label>变量类型</label>
+											<select class="form-control" name="vtype" id="vtype" disabled="disabled">
+											<option value="system:string">字符</option>
+											<option value="system:int">数值</option>
+											<option value="system:datetime">时间</option>
+											<option value="system:array">列表</option>
+											</select>
+                                        </div>
+										<div class="form-group">
+                                            <label>作用域</label>
+											<select class="form-control" name="vscope" id="vscope" disabled="disabled">
+											<option value="GLOBAL">全局</option>
+											<option value="TEMPLATE">模板</option>
+											</select>
+                                        </div>
+										<div class="form-group">
+                                            <label>变量内容</label>
+											<textarea id="value" name="value" class="form-control" rows="8"></textarea>
+                                        </div>
+                                            <div class="form-group">
+											<div class="checkbox">
+                                            <label><input id="enable" name="enable" type="checkbox" value="1" checked>是否启用</label>
+											</div>
+                                        </div>
+										<input type="hidden" id="project_id" name="project_id" value="{{project_id}}">
+										<input type="hidden" id="action" name="action" value="{{action}}">
+                                        <button type="button" id="submit" name="submit" class="btn btn-info">提交</button>
+
+                                    </form>
+                            </div>
+                        </div>
+                            </div>
+       </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+        <a href="http://www.66rpg.com/" target="_blank" title="六趣网络">&copy; 2017 北京六趣网络科技有限公司</a>
+    </div>
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery-1.10.2.js") }}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{{ static_url("assets/js/bootstrap.js") }}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{{ static_url("assets/js/jquery.metisMenu.js") }}"></script>
+    <!-- CUSTOM SCRIPTS -->
+	<script src="{{ static_url("assets/js/custom.js") }}"></script>
+
+<script>
+$("button#submit").click(function(){
+
+	var cms_pid = $("input#project_id").val();
+	var cms_name = $.trim($("input#vname").val());
+	var cms_type = $.trim($("select#vtype").val());
+	var cms_scope = $.trim($("select#vscope").val());
+	var cms_value = $.trim($("#value").val());
+	var cms_enable = $.trim($("input#enable").val());
+
+	if (cms_name.length==0){
+		alert('变量名称不能为空');
+		return false;
+	}
+	if (cms_value.length==0) {
+		alert('变量不能为空值');
+		return false;
+	}
+	var action = "/admin/variable?action="+$("input#action").val()
+
+	$.post(action,{pid:cms_pid,variable_name:cms_name,variable_type:cms_type,variable_scope:cms_scope,variable_value:cms_value,enable:cms_enable},function(result){
+		var obj = JSON.parse(result);
+		if(obj.code==0){
+			alert('添加成功！');
+			$("input#project_id").val(obj.pid);
+			$("input#action").val("update");
+		} else {
+			alert('添加失败！'+obj.errmsg);
+		}
+	});
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<div class="form-group" id="group_{$field_id}" style=" width: 800px;">
+	<label>{$field_name}</label>
+	<textarea id="sp_{$field_id}" style="width:780px;"  name="sp_{$field_id}" class="form-control"  v-bind:rows="dev_data.hasOwnProperty('sp{$field_id}_developer_data')?dev_data.sp{$field_id}_developer_data.rows:5"  v-model="user_data.sp{$field_id}_user_data"></textarea>
+</div>
