@@ -117,7 +117,7 @@ def sql_convert(cms_sql):
     global redis
     # 加载系统模板域
     cms_assert(not redis.exists('system_fields'), 500, 'system config can not find!!!')
-    system_fields = json.loads(redis.get('system_fields'))
+    system_fields = json.loads(str(redis.get('system_fields'), encoding='utf-8'))
     pattern = re.compile(r"\{#.*?\}")
     m = pattern.findall(cms_sql)
     cms_assert(len(m) == 0, 500, 'sql error,sql:' + cms_sql)
@@ -135,7 +135,7 @@ def sql_convert(cms_sql):
     else:
         cms_sql = cms_sql.replace('{#' + tbl + '}', tbl)
     pass
-    cms_sql_tid = filter(str.isdigit, tbl)
+    cms_sql_tid = list(filter(str.isdigit, tbl))[0]
     # 只获取enable=1的模板域
     _sql = 'select field_id,field_name from cms_template_field where `enable`=1 and template_id=' + cms_sql_tid
     n, data = db.executeQuery(pid, _sql)

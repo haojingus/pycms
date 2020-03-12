@@ -164,14 +164,14 @@ class Interpreter(object):
 		_p = re.compile(r"\[CMSDATAKEY=.*?\]")
 		_key = _p.findall(render_data)
 		if len(_key) == 1:
-			return str(self.share_memory.get(_key[0].replace('[CMSDATAKEY=', '').replace(']', '')),encoding='utf-8')
+			return str(self.share_memory.get(_key[0].replace('[CMSDATAKEY=', '').replace(']', '')), encoding='utf-8')
 		else:
 			return render_data
 
 	def sql_convert(self, cms_sql):
 		# 加载系统模板域
 		self.cms_assert(not self.share_memory.exists('system_fields'), 5002, 'system config can not find!!!')
-		system_fields = json.loads(self.share_memory.get('system_fields'))
+		system_fields = json.loads(str(self.share_memory.get('system_fields'),encoding='utf-8'))
 		pattern = re.compile(r"\{#[^}]*\}")
 		m = pattern.findall(cms_sql)
 		self.cms_assert(len(m) == 0, 500, 'sql error,sql:' + cms_sql)
@@ -190,7 +190,7 @@ class Interpreter(object):
 		else:
 			cms_sql = cms_sql.replace('{#' + tbl + '}', tbl)
 		pass
-		cms_sql_tid = filter(str.isdigit, tbl)
+		cms_sql_tid = list(filter(str.isdigit, tbl))[0]
 		_sql = 'select field_id,field_name from cms_template_field where template_id=' + cms_sql_tid
 		n, data = self.db.executeQuery(self.pid, _sql)
 		self.cms_assert(n < 1, 500, 'can not find field info')

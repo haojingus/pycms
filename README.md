@@ -66,31 +66,23 @@ script: *输出渲染作用域*
 [#name] 模板/表  
   
 范例  
-```cpp 
+```php 
  
-@@这是一套模板算法booklist、gamelist是用户数据集，会根据算法语言自动把结果集注入同名变量中
+@@这是一套模板算法mydata是用户数据集,通过<<符号导入到script域，成为argv的一个成员
+@@sql结果集
 [sql]
-input:booklist<<"select {$文档编号},{$头条} from {#首页} where {$文档编号}='1'"
-input:gamelist<<"select {$文档编号},{$标题一} from {#游戏库} where {$文档编号}>2 limit 10"
-script:doclist<<"select {$文档编号},{$大标题} from {#文档库} where {$文档编号}<100 limit 50"
-
-[input:cpp]
-#include "cppsdk/cms.h"
-#include <iostream>
-int CmsMain(argc,argv)
-{
-
-//此时booklist和gamelist已经被解析到Json::Value类型的同名变量中
-cout<<booklist[0]['document_id'].asString().c_str()<<endl;
-
-}
+script:mydata<<"select {$文档编号},{$头条} from {#测试模板1} where {$文档编号}<100 limit 50"
+@@后台模板域算法
+[input:raw]
+[{"name":"类别一","value":1},{"name":"类别二","value":2}]
+@@前台渲染算法
 [script:php]
-@@对于php，增加<?php仅仅是为了让UI支持语法高亮，加不加都可以确保正常执行
 <?php
-require('phpsdk/cms.php');
-//此时booklist和gamelist已经被解析到$booklist和$gamelist中
-print_t($booklist);
-print_t($gamelist);
+function cmsapp($argv){
+  $key = '$input';
+  
+$argv->display('我们选择的是['.$argv->$key.']'.'<br/>数据库取出来的数组为'.json_encode($argv->mydata));
+}
 ?>
 ```
 
@@ -124,14 +116,16 @@ form.html、form.js、form.css、form_submit.js、develop.test(可选)、user.te
 完整的vue对象和data结构描述
 
 ```js
-new Vue({
-    el:'#app',
-	data: {
-		spx_develop_data:JSON.parse(develop.test),//绑定
-		spx_user_data:convert(vm.spx_submit_data),//绑定
-		spx_submit_data:""//无绑定关系
-		}
+var vm = new Vue({
+	el:'#app',
+	data:{
+		dev_data:{},//插件组件的全量数据
+		user_data:{},//当前插件组件绑定的有效数据，比如下拉列表的选中项
+		submit_data:{},//提交到后端数据库的数据，一般是已经被序列化的数据
+		system_data:{publish_url:''}//和插件无关的系统数据
+	}
 });
+
 //此处的convert函数不存在，仅仅是为了说明自定义插件需要对spx_submit_data这种用户数据做转换再附加到spx_user_data上。spx_user_data不对数据做要求，仅仅是绑定关系决定数据类型。
 
 ```
@@ -152,7 +146,7 @@ cmsobj.register_callback(func,new Array()) 用于注册所有插件初始化完�
 ```php
 <?php
 
-//下边这行代码会被cms沙盒过滤掉
+//下边这行echo代码会被cms沙盒过滤掉,cms禁止在函数、变量、类定义之外有执行动作
 echo('test');
 
 class myClass1{
@@ -171,9 +165,12 @@ class myClass1{
 
 function cmsapp($argv){
 
+    $key = '$input';
 	$cls1 = new myClass1('hello world');
-	$argv->$display($cls1->show());
-	//echo($cls1->show()); echo已废弃，统一通过display内置函数来输出
+    //统一通过display内置方法来输出，可以通过序列化来查看$argv的内容
+    //因为我们的系统变量都是$前缀，和php的变量声明冲突，所以使用系统变量的时候，需要把变量名赋值过去，再间接引用
+	$argv->display('这是myClass1的方法结果'.$cls1->show().'.这是插件输入值：'.$argv->$key);
+	
 
 }
 
@@ -186,7 +183,8 @@ $pid:项目id，引用方式：$argv['$pid'].菜鸟们注意，必须是单引�
 $tid:模板id  
 $fid:模板域id  
 $did:文档id  
-$type:脚本类型（input、script） 
+$type:脚本类型（input、script）
+$input:插件传值，也就是刚才的submit_data，如下拉列表的选定值 
 /\w+/:非$前缀的字母key为算法中[sql]段中定义的结果集。在cmsapp中被引用到参数$argv中，生存期很短
 > * 类型说明：
 input:用于渲染后台输入域插件，结果直接引入spx_develop_data，需要能被json化  
