@@ -136,7 +136,7 @@ var cmsobj = Object.create(Cms);
 try{
 
 	//插件developer数据初始化
-	vm.$set(vm.dev_data,'sp{{field_id}}_developer_data',JSON.parse(`{{debug_input}}`));
+	Vue.set(vm.dev_data,'sp{{field_id}}_developer_data',JSON.parse(`{{debug_input}}`));
 
 }
 catch(err){
@@ -147,7 +147,7 @@ catch(err){
 //init vue data
 //eg:vm.$set('sp1_submit_data',json);
 //only support input type
-vm.$set(vm.submit_data,'sp{{field_id}}_submit_data','{{field_value}}');
+Vue.set(vm.submit_data,'sp{{field_id}}_submit_data','{{field_value}}');
 
 //插件初始化js
 try{

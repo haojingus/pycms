@@ -13,6 +13,7 @@ import redis
 import subprocess
 import logging
 import importlib
+import base64
 
 from datetime import datetime
 from dbmanager import DbManager
@@ -62,6 +63,7 @@ class Application(tornado.web.Application):
 	 
 		settings = dict(
 			app_title=u"CMS",
+			app_logo = "ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKIF8gX18gIF8gICBfICBfX18gXyBfXyBfX18gIF9fXyAKfCAnXyBcfCB8IHwgfC8gX198ICdfIGAgXyBcLyBfX3wKfCB8XykgfCB8X3wgfCAoX198IHwgfCB8IHwgXF9fIFwKfCAuX18vIFxfXywgfFxfX198X3wgfF98IHxffF9fXy8KfF98ICAgIHxfX18vICAgICAgICAgICAgICAgICAgICAK",
 			template_path=os.path.join(sys.path[0], "templates"),
 			static_path=os.path.join(sys.path[0], "static"),
 		    upload_path=os.path.join(sys.path[0], "upload"),
@@ -132,6 +134,7 @@ def main():
 	tornado.options.parse_command_line()
 	global app 
 	app = Application()
+	print(str(base64.b64decode(app.settings['app_logo']),encoding='utf-8'))
 	http_server = tornado.httpserver.HTTPServer(app)
 	# http_server.listen(options.port)
 	http_server.bind(options.port)

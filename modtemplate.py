@@ -47,13 +47,15 @@ class ModTemplate(object):
         _enable = '1' if 'enable' not in template else str(template['enable'])
         _template_view = '' if 'template_view' not in template else template['template_view']
         _template_summary = '' if 'template_summary' not in template else template['template_summary']
+        _template_config = '' if 'template_config' not in template else template['template_config']
         _callback = '' if 'callback' not in template else template['callback']
         _publish_url = self.conf['default_publish_url'] if 'publish_url' not in template else template[
             'publish_url']
         expression = expression + ",`enable`=" + _enable + ",`template_view`='" + pymysql.escape_string(
             _template_view) + "',`template_summary`='" + pymysql.escape_string(
             _template_summary) + "',`publish_callback`='" + pymysql.escape_string(
-            _callback) + "',`publish_url`='" + _publish_url + "'"
+            _callback) + "',`publish_url`='" + _publish_url + "',`template_config`='"+pymysql.escape_string(
+			_template_config)+"'"
         if action == 'update':
             if 'template_id' not in template:
                 return Error.MODPARAMERR

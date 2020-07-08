@@ -5,6 +5,10 @@ var vm = new Vue({
 		user_data:{},
 		submit_data:{},
 		system_data:{publish_url:''}
+	},
+	methods:{
+		user_func1:function(p){},
+		user_func2:function(p){}
 	}
 });
 

@@ -22,6 +22,7 @@ class DbManager:
 
 	def __init__(self):
 		logging.debug('DbManager class inited!')
+		self.isLock = False
 
 	@classmethod
 	def initConn(cls, config):
@@ -35,6 +36,7 @@ class DbManager:
 		Returns:
 			统一的错误状态码Error.*.
 		"""
+		cls.isLock = False
 		if len(config) == 0:
 			return Error.APPCONFIGERR
 
@@ -206,8 +208,9 @@ class DbManager:
 			return -1, Error.DBNOTEXIST
 		conn = cls.connectPool[project]
 		try:
-			# logging.info('CONN:'+project+' SQL:'+sql)
+			#logging.info('CONN:'+project+' SQL:'+sql)
 			cursor = conn.cursor()
+			conn.ping(reconnect=True)
 			n = cursor.execute(sql)
 		except Exception as e:
 			if str(e).find('2006') != -1:
@@ -260,8 +263,14 @@ class DbManager:
 			行数,统一的错误状态码Error.*.
 		"""
 		pass
-
-		return cls.__execute(project, sql, True, True)
+		ret = -1,None
+		while True:
+			if not cls.isLock:
+				cls.isLock = True
+				ret = cls.__execute(project, sql, True, True)
+				cls.isLock = False
+				return ret
+		return ret
 
 	@classmethod
 	def execute(cls, project, sql, **kwargv):

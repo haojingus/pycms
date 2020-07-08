@@ -2,6 +2,7 @@
 from datetime import datetime
 import json
 import copy
+import logging
 
 from common import Common
 from httprpc import HttpRpc
@@ -25,7 +26,6 @@ class ModUser(object):
 			recode = rpc.call('zzsjapi','get_user_info','get',params={'token':authcode})
 			if recode['code'] !=0:
 				return recode
-			print(recode)
 			if recode['result']['code'] == 0:
 				#用户信息RPC获取成功
 				r = copy.deepcopy(Error.SUCC)

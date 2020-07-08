@@ -1,5 +1,4 @@
 # coding=utf-8
-from PIL import Image
 import os
 import sys
 import glob
@@ -212,3 +211,7 @@ class Common:
     def filter_digit(s):
         p = '[^\d]*'
         return re.sub(p, '', s)
+
+    @staticmethod
+    def uuid():
+        return Common.md5(str(time.time()))

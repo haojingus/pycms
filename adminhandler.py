@@ -233,6 +233,7 @@ class AdminHandler(BaseHandler):
             summary = self.get_argument('summary', '')
             view = self.get_argument('view', '')
             callback = self.get_argument('callback', '')
+            config = self.get_argument('config', '')
             url = self.get_argument('url', self.application.cfg['default_publish_format'])
             enable = int(self.get_argument('enable', '1'))
             result = 'failed'
@@ -246,7 +247,7 @@ class AdminHandler(BaseHandler):
             # 重名监测End
             if action == 'add':
                 result = _template.update(action, pid, template_name=name, template_summary=summary, template_view=view,
-                                          callback=callback, publish_url=url, enable=enable)
+                                          template_config=config,callback=callback, publish_url=url, enable=enable)
             if action == 'update':
                 if tid == 0:
                     logging.warning(str(Error.CGIREQUESTERR))

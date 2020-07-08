@@ -204,6 +204,8 @@
 		var cms_callback = $.trim($("textarea#callback").val());
 		var cms_enable = $("input#enable").prop('checked')?'1':'0';
 		var cms_url = $.trim($("input#url").val());
+		//template_config 尚未启用
+		var cms_config = '';
 
 		if (cms_name.length==0||cms_summary.length==0){
 			$("button#submit").prop("disabled",false);
@@ -238,7 +240,7 @@
 			return false;
 		}
 	var action = "/admin/template?action="+$("input#action").val()
-	$.post(action,{pid:cms_pid,tid:cms_tid,name:cms_name,summary:cms_summary,view:cms_view,callback:cms_callback,url:cms_url,enable:cms_enable},function(result){
+	$.post(action,{pid:cms_pid,tid:cms_tid,name:cms_name,summary:cms_summary,view:cms_view,config:cms_config,callback:cms_callback,url:cms_url,enable:cms_enable},function(result){
 		var obj = JSON.parse(result);
 		if(obj.code==0){
 			alert('添加成功！');

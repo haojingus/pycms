@@ -136,9 +136,9 @@ cmsobj.fid_set = "{{form_fields}}";
 //only support input type
 //change 20180403
 {% for item in fields_data %}
-vm.$set(vm.submit_data,'sp{{item['field_id']}}_submit_data',decodeURIComponent(window.atob(`{{item['field_value']}}`)));
+Vue.set(vm.submit_data,'sp{{item['field_id']}}_submit_data',decodeURIComponent(window.atob(`{{item['field_value']}}`)));
 {% end %}
-vm.$set(vm.system_data,'publish_url','{{publish_url}}');
+Vue.set(vm.system_data,'publish_url','{{publish_url}}');
 //插件初始化js
 {{forminfo['js']}}
 //插件初始化js end

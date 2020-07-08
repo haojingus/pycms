@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b597fed5-2788-424a-baf3-af79ca33262f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/cms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1X3Je71P3DRYv0qepWEvaLQSzBV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="cms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="NODE_PATH" value="/usr/local/lib/node_modules" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration useDefault="false">$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\code\repos\cms" />
+          <option name="myCopyRoot" value="D:\code\repos\cms" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\code\repos\cms" />
+          <option name="myCopyRoot" value="D:\code\repos\cms" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b597fed5-2788-424a-baf3-af79ca33262f" name="Default Changelist" comment="" />
+      <created>1580268936307</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580268936307</updated>
+      <workItem from="1580268938020" duration="6563000" />
+      <workItem from="1580633422185" duration="1193000" />
+      <workItem from="1580699240198" duration="13718000" />
+      <workItem from="1580958881053" duration="21571000" />
+      <workItem from="1581208578811" duration="19739000" />
+      <workItem from="1581464383570" duration="96000" />
+      <workItem from="1581464497870" duration="1571000" />
+      <workItem from="1581473051158" duration="5713000" />
+      <workItem from="1581485171793" duration="622000" />
+      <workItem from="1581487366827" duration="1066000" />
+      <workItem from="1581498742655" duration="214000" />
+      <workItem from="1581499794139" duration="2680000" />
+      <workItem from="1581562897916" duration="11809000" />
+      <workItem from="1581654820779" duration="611000" />
+      <workItem from="1581660295323" duration="5124000" />
+      <workItem from="1581905043349" duration="19872000" />
+      <workItem from="1582426778114" duration="22000" />
+      <workItem from="1582439959034" duration="228000" />
+      <workItem from="1582441946883" duration="38000" />
+      <workItem from="1582442171604" duration="17000" />
+      <workItem from="1583989679802" duration="278000" />
+      <workItem from="1583990165493" duration="5872000" />
+      <workItem from="1593953973460" duration="563000" />
+      <workItem from="1593954552404" duration="451000" />
+      <workItem from="1594004910159" duration="53000" />
+      <workItem from="1594170835813" duration="1303000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1580602284029</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580602284030</updated>
+    </task>
+    <task id="LOCAL-00002" summary="升级项目到Python3.8">
+      <created>1581001144030</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581001144031</updated>
+    </task>
+    <task id="LOCAL-00003" summary="重构php二次开发包">
+      <created>1581600396195</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581600396195</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed">
+      <created>1581660628143</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581660628143</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix redis bytes bug">
+      <created>1581665011194</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581665011194</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix remote publish bug">
+      <created>1581933174603</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581933174603</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix filter bug">
+      <created>1583995956820</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583995956820</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update readme">
+      <created>1583996177594</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583996177594</updated>
+    </task>
+    <task id="LOCAL-00009" summary="remove PIL import">
+      <created>1594004959830</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1594004959830</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="升级项目到Python3.8" />
+    <MESSAGE value="升级项目到Python3.8,插件开发不再需要考虑引号的各种转义，插件全面支持vue2.6+" />
+    <MESSAGE value="重构php二次开发包" />
+    <MESSAGE value="fixed" />
+    <MESSAGE value="fix redis bytes bug" />
+    <MESSAGE value="fix remote publish bug" />
+    <MESSAGE value="fix filter bug" />
+    <MESSAGE value="update readme" />
+    <MESSAGE value="remove PIL import" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove PIL import" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582442181853">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582442181853" />
+    <state x="1181" y="189" key="#xdebugger.evaluate" timestamp="1583995042825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1181" y="189" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1583995042825" />
+    <state x="432" y="24" key="CommitChangelistDialog2" timestamp="1583996177148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="432" y="24" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583996177148" />
+    <state width="1233" height="618" key="DebuggerActiveHint" timestamp="1583995125717">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1233" height="618" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1583995125717" />
+    <state x="694" y="266" key="EnvironmentVariablesDialog" timestamp="1581501505355">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="266" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581501505355" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581600290245">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581600290245" />
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1583996648277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583996648277" />
+    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1583996648276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583996648276" />
+    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1583996648276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583996648276" />
+    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1583996648276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583996648276" />
+    <state width="1877" height="325" key="GridCell.Tab.1.bottom" timestamp="1583996533482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="325" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583996533482" />
+    <state width="1877" height="325" key="GridCell.Tab.1.center" timestamp="1583996533482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="325" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583996533482" />
+    <state width="1877" height="325" key="GridCell.Tab.1.left" timestamp="1583996533482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="325" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583996533482" />
+    <state width="1877" height="325" key="GridCell.Tab.1.right" timestamp="1583996533482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="325" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583996533482" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1581600306568">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581600306568" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583990509611">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583990509611" />
+    <state x="771" y="379" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583991429649">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="771" y="379" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583991429649" />
+    <state x="701" y="244" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration" timestamp="1581487491241">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="701" y="244" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration/0.0.1920.1040@0.0.1920.1040" timestamp="1581487491241" />
+    <state x="626" y="95" width="667" height="849" key="find.popup" timestamp="1581924996714">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="626" y="95" width="667" height="849" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581924996714" />
+    <state x="767" y="420" key="svn.passwordDialog" timestamp="1581600394991">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="767" y="420" key="svn.passwordDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581600394991" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/common.py</url>
+          <line>187</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cms$main.coverage" NAME="main Coverage Results" MODIFIED="1593954964430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

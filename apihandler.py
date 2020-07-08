@@ -1,5 +1,6 @@
 #coding=utf-8
 import os.path
+import os
 import sys
 import json
 import copy
@@ -77,10 +78,13 @@ class ApiHandler(tornado.web.RequestHandler):
 		res,strfilter = self.__request_parser(input)
 		res_arr = res.split('/')
 		#只开放document
+		self.set_header('Access-Control-Allow-Origin','*')
 		if res_arr[0]=='document':
 			self.__api_document(method,res,strfilter)
 		elif res_arr[0]=='component':
 			self.__api_component(method,res,strfilter)
+		elif res_arr[0] == 'upload':
+			self.__upload()
 		else:
 			self.set_status(403)
 			self.write(json.dumps(Error.API_NOTSUPPORTED))
@@ -232,6 +236,34 @@ class ApiHandler(tornado.web.RequestHandler):
 		self.set_status(403)
 		self.write(json.dumps(Error.API_RESERROR))
 		pass
+
+	def __upload(self):
+			file_meta = self.request.files.get('userFile', None)
+			if not file_meta:
+				self.write(json.dumps(Error.UPLOADPARAMERR))
+				return
+			for meta in file_meta:
+				filename = meta['filename']
+				try:
+					filename = Common.uuid() + filename[filename.rindex('.'):].lower()
+					#可加入检查文件格式
+					if filename[filename.rindex("."):].lower() not in ('.jpg','.jpeg','.gif','.bmp','.png','.tiff'):
+						self.write(json.dumps(Error.FILEFORMATERR))
+						return
+				except Exception as e:
+					logging.error(str(e))
+					self.write(json.dumps(Error.UPLOADFILEERR))
+					return
+				upload_dir = self.application.settings['upload_path'] + '/' + filename[:2] + '/' + filename[2:4]
+				path = upload_dir + '/' + filename
+				logging.info('upload path:'+path)
+				if not os.path.isdir(upload_dir):
+					os.makedirs(upload_dir)
+				with open(path, 'wb') as up:
+					up.write(meta['body'])
+				self.write(json.dumps({'code':0,'filename':'/'+self.application.cfg['upload_path']+'/'+ filename[:2]+'/'+filename[2:4]+'/'+filename}))
+				return
+
 
 	def __token_check(self,token):
 		"""authentication check
