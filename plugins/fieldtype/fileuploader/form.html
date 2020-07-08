@@ -1,0 +1,6 @@
+<div class="form-group" id="group_{$field_id}" style=" width: 800px;">
+<label>{$field_name}</label>
+<div style="margin-bottom:20px;"><img id="img_sp_{$field_id}" style="border:1px;width:200px;height:200px;" v-bind:src="user_data.sp{$field_id}_user_data"></div>
+<input id="localFiles_sp_{$field_id}" type="file"/>
+<input id="btnUpload_sp_{$field_id}" type="button" value="上传" style="margin-top:20px;" @click="user_func1({$field_id})"/>
+</div>
