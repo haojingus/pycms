@@ -114,7 +114,7 @@
 									
 										<div class="form-group">
 											<label>模板视图</label>
-											<textarea id="code" name="code" class="form-control" rows="10">{{template['template_view']}}</textarea>
+											<textarea id="code" name="code" class="form-control" rows="10">{{escape(template['template_view'])}}</textarea>
 										</div>
 										<div class="form-group">
 											<label>模板回调配置</label>

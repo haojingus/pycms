@@ -3,7 +3,7 @@ import pymysql
 import logging
 import copy
 from error import Error
-
+import time
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%a, %d %b %Y %H:%M:%S')
 
@@ -270,6 +270,7 @@ class DbManager:
 				ret = cls.__execute(project, sql, True, True)
 				cls.isLock = False
 				return ret
+			time.sleep(0.1)
 		return ret
 
 	@classmethod

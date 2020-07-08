@@ -5,6 +5,7 @@ import json
 import re
 import copy
 import logging
+import html
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
